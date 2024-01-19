@@ -1,0 +1,115 @@
+html {
+    background-color: rgb(51, 67, 189);
+    overflow: hidden;
+}
+
+.title-table {
+    display: grid;
+    margin: 25px auto 10px;
+    width: 19.5vw;
+    font-size: 48px;
+    grid-template-columns: repeat(6, 3.25vw);
+    animation: slide_top 2s;
+}
+
+.title-table__symbol {
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    width: 33vw;
+    top: 100%;
+    left: 33.5vw;
+}
+
+.menu-wrapper {
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 100vh auto;
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    animation: slide_bottom 2s;
+}
+
+.menu-wrapper__button {
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 3px;
+}
+
+.answer-table {
+    width: 20vw;
+    margin: auto;
+    animation: slide_left 2.2s;
+}
+
+.answer-table-line {
+    display: grid;
+    width: 100%;
+    margin: 3px auto;
+    grid-template-columns: repeat(5, 4vw);
+}
+
+.answer-table-line__cell {
+    height: calc(4vw - 6px);
+    width: calc(4vw - 6px);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.trembling-animation {
+    animation: trembling 0.5s;
+}
+
+@keyframes trembling {
+    0% {transform: translateX(0);}
+    33% {transform: translateX(10px);}
+    66% {transform: translateX(-10px);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes slide_top {
+    0% {
+        font-size: 78px;
+        transform: translateY(calc(40vh - 25px));
+        width: 36vw;
+        grid-template-columns: repeat(6, 6vw);
+    }
+    50% {
+        font-size: 78px;
+        transform: translateY(calc(40vh - 25px));
+        width: 36vw;
+        grid-template-columns: repeat(6, 6vw);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide_bottom {
+    0% {
+        transform: translateY(calc(-140vh - 67.5px));
+    }
+    50% {
+        transform: translateY(calc(-140vh - 67.5px));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide_left {
+    0%   {transform: translateX(100vw);}
+    75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}

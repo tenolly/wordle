@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wordle</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/index.css' )}}">
+</head>
+
+<body>
+    <div class="title-table">
+        <div class="title-table__symbol title-table__symbol--animation1">W</div>
+        <div class="title-table__symbol title-table__symbol--animation2">O</div>
+        <div class="title-table__symbol title-table__symbol--animation3">R</div>
+        <div class="title-table__symbol title-table__symbol--animation4">D</div>
+        <div class="title-table__symbol title-table__symbol--animation5">L</div>
+        <div class="title-table__symbol title-table__symbol--animation6">E</div>
+    </div>
+    <div class="menu">
+        <a href="/game" class="menu-wrapper">
+            <button class="menu-wrapper__button">PLAY</button>
+        </a>
+    </div>
+</body>
+
+</html>

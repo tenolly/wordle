@@ -1,0 +1,88 @@
+html {
+    background-color: rgb(51, 67, 189);
+    overflow: hidden;
+}
+
+.title-table {
+    display: grid;
+    margin: 40vh auto 0px;
+    width: 36vw;
+    grid-template-columns: repeat(6, 6vw);
+    animation: slide_top 3s;
+}
+
+.title-table__symbol {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 78px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu {
+    display: flex;
+    width: 33vw;
+    margin: auto;
+    animation: slide_left 3s;
+}
+
+.menu-wrapper {
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 0px auto;
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.menu-wrapper__button {
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 3px;
+}
+
+.title-table__symbol--animation1 {
+    animation: 1.2s slide_right;
+}
+
+.title-table__symbol--animation2 {
+    animation: 1.3s slide_right;
+}
+
+.title-table__symbol--animation3 {
+    animation: 1.4s slide_right;
+}
+
+.title-table__symbol--animation4 {
+    animation: 1.5s slide_right;
+}
+
+.title-table__symbol--animation5 {
+    animation: 1.6s slide_right;
+}
+
+.title-table__symbol--animation6 {
+    animation: 1.7s slide_right;
+}
+
+@keyframes slide_right {
+    0%   {transform: translateX(-80vw)}
+    100%  {transform: translateX(0)}
+}
+
+@keyframes slide_top {
+    0%   {transform: translateY(8vh);}
+    75%  {transform: translateY(8vh)}
+    100% {transform: translateY(0)}
+}
+
+@keyframes slide_left {
+    0%   {transform: translateX(100vw);}
+    75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}

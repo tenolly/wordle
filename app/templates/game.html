@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wordle</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/game.css' )}}">
+</head>
+
+<body>
+    <div class="title-table">
+        <div class="title-table__symbol trembling-animation">W</div>
+        <div class="title-table__symbol trembling-animation">O</div>
+        <div class="title-table__symbol trembling-animation">R</div>
+        <div class="title-table__symbol trembling-animation">D</div>
+        <div class="title-table__symbol trembling-animation">L</div>
+        <div class="title-table__symbol trembling-animation">E</div>
+    </div>
+    <div class="answer-table">
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+        <div class="answer-table-line">
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+            <div class="answer-table-line__cell"></div>
+        </div>
+    </div>
+    <div class="menu trembling-animation">
+        <a href="/game" class="menu-wrapper">
+            <button class="menu-wrapper__button">PLAY</button>
+        </a>
+    </div>
+</body>
+
+</html>
