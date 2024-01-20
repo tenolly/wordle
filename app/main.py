@@ -1,7 +1,7 @@
 import os
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -18,5 +18,11 @@ async def index(request: Request):
 
 
 @app.get("/game", response_class=HTMLResponse)
-async def index(request: Request):
+async def game(request: Request):
     return templates.TemplateResponse(request=request, name="game.html")
+
+
+@app.post("/check_word", response_class=JSONResponse)
+async def check_word(request: Request):
+    word = (await request.json())["word"]
+    

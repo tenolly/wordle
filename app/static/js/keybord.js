@@ -10,7 +10,24 @@ function pressKeybordButton(value) {
 }
 
 async function pressEnterButton() {
+    if (currentCell != 5) {
+        alert("Not enough letters");
+        return;
+    }
 
+    const response = await fetch(window.location.href.replace("game", "check_word"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+        body: JSON.stringify(
+            { "word": [...Array(5).keys()].map((num) => document.getElementById(`line_${currentLine}_cell_${num}`).innerText).join("") }
+        )
+    });
+
+    if (response.ok) {
+        //
+    } else {
+        //
+    }
 }
 
 function pressBackspaceButton() {
