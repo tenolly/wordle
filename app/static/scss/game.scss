@@ -1,0 +1,104 @@
+@import "default";
+@import "params";
+
+.title-table {
+    display: grid;
+    width: fit-content;
+    margin: $small-title-margin-top auto $small-title-margin-bottom;
+    grid-template-columns: repeat(6, calc($small-title-width / 6));
+    animation: $anim-basic-duration slide_top;
+
+    @include default-font(36px);
+
+    div {
+        display: block;
+        text-align: center;
+    }
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    margin: auto;
+    width: calc($big-title-width * 0.92);
+    left: calc((100vw - $big-title-width * 0.92) / 2);
+    top: 200vh;
+}
+
+.menu-wrapper {
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid rgb(255, 255, 255);
+    animation: $anim-basic-duration slide_bottom;
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        @include default-font(25px);
+        letter-spacing: 3px;
+    }
+}
+
+.answer-table {
+    margin: auto;
+    width: fit-content;
+    animation: calc($anim-basic-duration + 0.5s) slide_left;
+}
+
+.answer-table-line {
+    display: grid;
+    width: 100%;
+    margin: $table-wordle-cell-margin auto;
+    grid-template-columns: repeat(5, $table-wordle-cell-size);
+
+    div {
+        height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+        width: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+        border: 1px solid rgb(255, 255, 255);
+    }
+}
+
+.trembling-animation {
+    animation: trembling 0.3s;
+}
+
+@keyframes trembling {
+    0% {transform: translateX(0);}
+    33% {transform: translateX(10px);}
+    66% {transform: translateX(-10px);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes slide_top {
+    0% {
+        font-size: 78px;
+        width: fit-content;
+        transform: translateY(calc($big-title-margin-top - $small-title-margin-top));
+        grid-template-columns: repeat(6, calc($big-title-width / 6));
+    }
+    50% {
+        font-size: 78px;
+        width: fit-content;
+        transform: translateY(calc($big-title-margin-top - $small-title-margin-top));
+        grid-template-columns: repeat(6, calc($big-title-width / 6));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide_bottom {
+    0%   {transform: translateY(calc(-200vh + $big-title-margin-top + $big-title-margin-bottom + 88px));}
+    40%  {transform: translateY(calc(-200vh + $big-title-margin-top + $big-title-margin-bottom + 88px));}
+    100% {transform: translateY(0);}
+}
+
+@keyframes slide_left {
+    0%   {transform: translateX(100vw);}
+    75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}

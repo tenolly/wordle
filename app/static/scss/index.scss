@@ -1,0 +1,65 @@
+@import "default";
+@import "params";
+
+.title-table {
+    display: grid;
+    width: fit-content;
+    margin: $big-title-margin-top auto $big-title-margin-bottom;
+    grid-template-columns: repeat(6, calc($big-title-width / 6));
+    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_top;
+
+    @include default-font(78px);
+
+    .animation1 { animation: $anim-basic-duration slide_right; }
+    .animation2 { animation: calc($anim-basic-duration + 0.1s) slide_right; }
+    .animation3 { animation: calc($anim-basic-duration + 0.2s) slide_right; }
+    .animation4 { animation: calc($anim-basic-duration + 0.3s) slide_right; }
+    .animation5 { animation: calc($anim-basic-duration + 0.4s) slide_right; }
+    .animation6 { animation: calc($anim-basic-duration + 0.5s) slide_right; }
+
+    div {
+        display: block;
+        text-align: center;
+    }
+}
+
+.menu {
+    display: flex;
+    margin: auto;
+    width: calc($big-title-width * 0.92);
+    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_left;
+}
+
+.menu-wrapper {
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 0px auto;
+    border: 2px solid rgb(255, 255, 255);
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        @include default-font(25px);
+        letter-spacing: 3px;
+    }
+}
+
+@keyframes slide_right {
+    0%   {transform: translateX(-80vw)}
+    100% {transform: translateX(0)}
+}
+
+@keyframes slide_top {
+    0%   {transform: translateY(8vh);}
+    75%  {transform: translateY(8vh)}
+    100% {transform: translateY(0)}
+}
+
+@keyframes slide_left {
+    0%   {transform: translateX(100vw);}
+    75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}
