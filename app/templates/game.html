@@ -27,7 +27,7 @@
             for (i = 0; i < 6; ++i) {
                 let div = document.createElement("div");
                 div.className = "answer-table-line";
-                div.innerHTML = "<div></div>".repeat(5);
+                div.innerHTML = [...Array(5).keys()].map((num) => `<div id="line_${i}_cell_${num}"></div>`).join("");
                 answer_table.append(div);
             }
         </script>
