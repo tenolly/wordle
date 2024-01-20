@@ -56,6 +56,9 @@
     grid-template-columns: repeat(5, $table-wordle-cell-size);
 
     div {
+        @include default-font(38px);
+        text-align: center;
+        line-height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         width: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         border: 1px solid rgb(255, 255, 255);

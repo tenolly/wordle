@@ -65,6 +65,11 @@ a {
   grid-template-columns: repeat(5, 65px);
 }
 .answer-table-line div {
+  color: white;
+  font-size: 38px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  line-height: 59px;
   height: 59px;
   width: 59px;
   border: 1px solid rgb(255, 255, 255);
