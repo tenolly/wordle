@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <div class="title-table">
-        <div class="animation1">W</div>
-        <div class="animation2">O</div>
-        <div class="animation3">R</div>
-        <div class="animation4">D</div>
-        <div class="animation5">L</div>
-        <div class="animation6">E</div>
+    <div class="title-table" id="title-table">
+        <script>
+            let title_div = document.getElementById("title-table");
+            ["W", "O", "R", "D", "L", "E"].forEach((char, index) => {
+                let div = document.createElement("div");
+                div.className = `animation${index + 1}`;
+                div.innerHTML = char;
+                title_div.append(div);
+            })
+        </script>
     </div>
     <div class="menu">
         <a href="/game" class="menu-wrapper"><button>PLAY</button></a>

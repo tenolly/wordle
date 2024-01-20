@@ -27,7 +27,7 @@
     display: flex;
     margin: auto;
     width: calc($big-title-width * 0.92);
-    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_left;
+    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_menu;
 }
 
 .menu-wrapper {
@@ -58,8 +58,14 @@
     100% {transform: translateY(0)}
 }
 
-@keyframes slide_left {
+@keyframes slide_menu {
     0%   {transform: translateX(100vw);}
     75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}
+
+@keyframes slide_keybord {
+    0%   {transform: translateX(-100vw);}
+    75%  {transform: translateX(-100vw)}
     100% {transform: translateX(0)}
 }

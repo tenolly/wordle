@@ -12,11 +12,11 @@ a {
 .title-table {
   display: grid;
   width: fit-content;
-  margin: 15px auto 8px;
-  grid-template-columns: repeat(6, 41.6666666667px);
+  margin: 20px auto 10px;
+  grid-template-columns: repeat(6, 35px);
   animation: 1.2s slide_top;
   color: white;
-  font-size: 36px;
+  font-size: 37px;
   font-family: "Courier New", Courier, monospace;
 }
 .title-table div {
@@ -55,23 +55,56 @@ a {
 .answer-table {
   margin: auto;
   width: fit-content;
-  animation: 1.7s slide_left;
+  animation: 1.7s slide_menu;
 }
 
 .answer-table-line {
   display: grid;
   width: 100%;
   margin: 3px auto;
-  grid-template-columns: repeat(5, 63px);
+  grid-template-columns: repeat(5, 65px);
 }
 .answer-table-line div {
-  height: 57px;
-  width: 57px;
+  height: 59px;
+  width: 59px;
   border: 1px solid rgb(255, 255, 255);
 }
 
 .trembling-animation {
   animation: trembling 0.3s;
+}
+
+.keybord {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  animation: 1.7s slide_keybord;
+}
+
+.keybord__line {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+.keybord__line button {
+  color: white;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 2px;
+  height: 58px;
+  width: 52px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(51, 67, 189);
+}
+
+.keybord__line-button--long-text {
+  width: 78px !important;
+  font-size: 16px !important;
+}
+
+.backspace-svg {
+  margin: 15px auto;
 }
 
 @keyframes trembling {
@@ -92,13 +125,13 @@ a {
   0% {
     font-size: 78px;
     width: fit-content;
-    transform: translateY(calc(40vh - 15px));
+    transform: translateY(calc(40vh - 20px));
     grid-template-columns: repeat(6, 100px);
   }
   50% {
     font-size: 78px;
     width: fit-content;
-    transform: translateY(calc(40vh - 15px));
+    transform: translateY(calc(40vh - 20px));
     grid-template-columns: repeat(6, 100px);
   }
   100% {
@@ -116,12 +149,23 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes slide_left {
+@keyframes slide_menu {
   0% {
     transform: translateX(100vw);
   }
   75% {
     transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide_keybord {
+  0% {
+    transform: translateX(-100vw);
+  }
+  75% {
+    transform: translateX(-100vw);
   }
   100% {
     transform: translateX(0);

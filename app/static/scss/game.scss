@@ -8,7 +8,7 @@
     grid-template-columns: repeat(6, calc($small-title-width / 6));
     animation: $anim-basic-duration slide_top;
 
-    @include default-font(36px);
+    @include default-font(37px);
 
     div {
         display: block;
@@ -46,7 +46,7 @@
 .answer-table {
     margin: auto;
     width: fit-content;
-    animation: calc($anim-basic-duration + 0.5s) slide_left;
+    animation: calc($anim-basic-duration + 0.5s) slide_menu;
 }
 
 .answer-table-line {
@@ -64,6 +64,38 @@
 
 .trembling-animation {
     animation: trembling 0.3s;
+}
+
+.keybord {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    animation: calc($anim-basic-duration + 0.5s) slide_keybord;
+}
+
+.keybord__line {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+
+    button {
+        @include default-font(20px);
+        margin: 2px;
+        height: $keybord-cell-height;
+        width: $keybord-cell-width;
+        border-radius: 5px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: $default-background-color;
+    }
+}
+
+.keybord__line-button--long-text {
+    width: calc($keybord-cell-width * 1.5) !important;
+    font-size: 16px !important;
+}
+
+.backspace-svg {
+    margin: 15px auto;
 }
 
 @keyframes trembling {
@@ -97,8 +129,14 @@
     100% {transform: translateY(0);}
 }
 
-@keyframes slide_left {
+@keyframes slide_menu {
     0%   {transform: translateX(100vw);}
     75%  {transform: translateX(100vw)}
+    100% {transform: translateX(0)}
+}
+
+@keyframes slide_keybord {
+    0%   {transform: translateX(-100vw);}
+    75%  {transform: translateX(-100vw)}
     100% {transform: translateX(0)}
 }

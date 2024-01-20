@@ -46,7 +46,7 @@ a {
   display: flex;
   margin: auto;
   width: 552px;
-  animation: 2.55s slide_left;
+  animation: 2.55s slide_menu;
 }
 
 .menu-wrapper {
@@ -86,12 +86,23 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes slide_left {
+@keyframes slide_menu {
   0% {
     transform: translateX(100vw);
   }
   75% {
     transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide_keybord {
+  0% {
+    transform: translateX(-100vw);
+  }
+  75% {
+    transform: translateX(-100vw);
   }
   100% {
     transform: translateX(0);

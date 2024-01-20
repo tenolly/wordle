@@ -1,3 +1,7 @@
+@import "params";
+
+$default-background-color: rgb(51, 67, 189);
+
 @mixin default-font($font-size) {
     color: white;
     font-size: $font-size;
@@ -5,7 +9,7 @@
 }
 
 html, body {
-    background-color: rgb(51, 67, 189);
+    background-color: $default-background-color;
     overflow: hidden;
     margin: 0;
     padding: 0;
