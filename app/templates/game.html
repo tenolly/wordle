@@ -47,9 +47,12 @@
                 keybord_line.className = "keybord__line";
                 line.forEach((char) => {
                     let button = document.createElement("button");
-                    button.onclick = () => pressKeybordButton(char)
-                    if (char.length > 1) {
+                    if (char.length == 1) {
+                        button.onclick = () => pressKeybordButton(char)
+                    } else {
                         button.className = "keybord__line-button--long-text"
+                        if (char == "ENTER") { button.onclick = () => pressEnterButton() }
+                        else { button.onclick = () => pressBackspaceButton() }
                     }
                     button.innerHTML = char;
                     keybord_line.append(button);
