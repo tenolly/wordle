@@ -7,60 +7,13 @@
     <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/game.css' )}}">
     <script src="{{ url_for( 'static', path='js/keybord.js' )}}"></script>
+    <script defer src="{{ url_for( 'static', path='js/load_game_html.js' )}}"></script>
 </head>
 
 <body>
-    <div class="title-table" id="title-table">
-        <script>
-            let title_div = document.getElementById("title-table");
-            ["W", "O", "R", "D", "L", "E"].forEach((char) => {
-                let div = document.createElement("div");
-                div.className = "trembling-animation";
-                div.innerHTML = char;
-                title_div.append(div);
-            })
-        </script>
-    </div>
-    <div class="answer-table" id="answer-table">
-        <script>
-            let answer_table = document.getElementById("answer-table");
-            for (i = 0; i < 6; ++i) {
-                let div = document.createElement("div");
-                div.className = "answer-table-line";
-                div.innerHTML = [...Array(5).keys()].map((num) => `<div id="line_${i}_cell_${num}"></div>`).join("");
-                answer_table.append(div);
-            }
-        </script>
-    </div>
-    <div class="keybord" id="keybord-table">
-        <script>
-            let keybord_table = document.getElementById("keybord-table");
-
-            let keybord = [
-                ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-                ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-                ["<img src=\"{{ url_for( 'static', path='images/backspace.svg' ) }}\" class='backspace-svg'>",
-                    "Z", "X", "C", "V", "B", "N", "M", "ENTER"]
-            ];
-            keybord.forEach((line) => {
-                let keybord_line = document.createElement("div");
-                keybord_line.className = "keybord__line";
-                line.forEach((char) => {
-                    let button = document.createElement("button");
-                    if (char.length == 1) {
-                        button.onclick = () => pressKeybordButton(char)
-                    } else {
-                        button.className = "keybord__line-button--long-text"
-                        if (char == "ENTER") { button.onclick = () => pressEnterButton() }
-                        else { button.onclick = () => pressBackspaceButton() }
-                    }
-                    button.innerHTML = char;
-                    keybord_line.append(button);
-                })
-                keybord_table.append(keybord_line);
-            })
-        </script>
-    </div>
+    <div class="title-table" id="title-table"></div>
+    <div class="answer-table" id="answer-table"></div>
+    <div class="keybord" id="keybord-table"></div>
     <div class="menu trembling-animation">
         <a href="/game" class="menu-wrapper">
             <button class="menu-wrapper__button">PLAY</button>

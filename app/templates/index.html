@@ -6,20 +6,11 @@
     <title>Wordle</title>
     <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/index.css' )}}">
+    <script defer src="{{ url_for( 'static', path='js/load_index_html.js' )}}"></script>
 </head>
 
 <body>
-    <div class="title-table" id="title-table">
-        <script>
-            let title_div = document.getElementById("title-table");
-            ["W", "O", "R", "D", "L", "E"].forEach((char, index) => {
-                let div = document.createElement("div");
-                div.className = `animation${index + 1}`;
-                div.innerHTML = char;
-                title_div.append(div);
-            })
-        </script>
-    </div>
+    <div class="title-table" id="title-table"></div>
     <div class="menu">
         <a href="/game" class="menu-wrapper"><button>PLAY</button></a>
     </div>
