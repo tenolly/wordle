@@ -4,6 +4,7 @@ let currentCell = 0;
 function pressKeybordButton(value) {
     if (currentCell < 5) {
         let cell = document.getElementById(`line_${currentLine}_cell_${currentCell}`);
+        cell.parentElement.style = "box-shadow: 0 0 0 1px;"
         cell.innerHTML = value;
         ++currentCell;
     }
@@ -13,6 +14,7 @@ function pressBackspaceButton() {
     if (currentCell > 0) {
         --currentCell;
         let cell = document.getElementById(`line_${currentLine}_cell_${currentCell}`);
+        cell.parentElement.style = "";
         cell.innerHTML = "";
     }
 }

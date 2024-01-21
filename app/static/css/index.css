@@ -1,8 +1,12 @@
 html, body {
-  background-color: rgb(40, 41, 48);
+  background-color: rgb(38, 39, 47);
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {

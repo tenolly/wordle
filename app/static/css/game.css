@@ -1,8 +1,12 @@
 html, body {
-  background-color: rgb(40, 41, 48);
+  background-color: rgb(38, 39, 47);
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -60,9 +64,9 @@ a {
 
 .answer-table-line {
   display: grid;
-  height: 62px;
+  height: 61.75px;
   width: 100%;
-  margin: 4px auto;
+  margin: 4.25px auto;
   grid-template-columns: repeat(5, 66px);
 }
 .answer-table-line div {
@@ -71,9 +75,9 @@ a {
   font-family: "Courier New", Courier, monospace;
   overflow: hidden;
   text-align: center;
-  line-height: 58px;
-  height: 58px;
-  width: 58px;
+  line-height: 57.5px;
+  height: 57.5px;
+  width: 57.5px;
   border: 1px solid rgb(185, 127, 39);
 }
 
@@ -102,7 +106,7 @@ a {
   width: 52px;
   border-radius: 5px;
   border: 1px solid rgb(185, 127, 39);
-  background-color: rgb(40, 41, 48);
+  background-color: rgb(38, 39, 47);
 }
 
 .keybord__line-button--long-text {
@@ -115,20 +119,20 @@ a {
 }
 
 .cell--state-n--color {
-  background-color: rgb(36, 36, 36) !important;
+  background-color: rgb(35, 34, 34) !important;
 }
 
 .cell--state-g--color {
-  background-color: rgb(11, 100, 8) !important;
+  background-color: rgb(17, 106, 14) !important;
 }
 
 .cell--state-y--color {
-  background-color: rgb(90, 88, 7) !important;
+  background-color: rgb(95, 94, 9) !important;
 }
 
 .cell--state-n--animation {
   animation: 1s flip;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(35, 34, 34);
 }
 .cell--state-n--animation div {
   animation: 1s move_outside;
@@ -136,7 +140,7 @@ a {
 
 .cell--state-g--animation {
   animation: 1s flip;
-  background-color: rgb(11, 100, 8);
+  background-color: rgb(17, 106, 14);
 }
 .cell--state-g--animation div {
   animation: 1s move_outside;
@@ -144,7 +148,7 @@ a {
 
 .cell--state-y--animation {
   animation: 1s flip;
-  background-color: rgb(90, 88, 7);
+  background-color: rgb(95, 94, 9);
 }
 .cell--state-y--animation div {
   animation: 1s move_outside;
@@ -216,16 +220,16 @@ a {
 }
 @keyframes flip {
   0% {
-    background-color: rgb(40, 41, 48);
-    height: 58px;
+    background-color: rgb(38, 39, 47);
+    height: 57.5px;
   }
   50% {
-    background-color: rgb(40, 41, 48);
+    background-color: rgb(38, 39, 47);
     height: 0;
-    margin-top: 37px;
+    margin-top: 37.25px;
   }
   100% {
-    height: 58px;
+    height: 57.5px;
   }
 }
 @keyframes move_outside {
@@ -233,7 +237,7 @@ a {
     margin-top: 0;
   }
   50% {
-    margin-top: -37px;
+    margin-top: -37.25px;
   }
   100% {
     margin-top: 0;
