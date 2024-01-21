@@ -14,6 +14,12 @@
     <div class="menu">
         <a href="/game?lang={{ lang }}" class="menu-wrapper"><button>{{ play }}</button></a>
     </div>
+    <div class="footer-links">
+        <a href="/?lang={{ next_lang }}" class="change-language"><button>{{ lang.upper() }}</button></a>
+        <a href="https://github.com/tenolly/wordle" class="change-language">
+            <img src="{{ url_for( 'static', path='images/github.svg' )}}">
+        </a>
+    </div>
 </body>
 
 </html>

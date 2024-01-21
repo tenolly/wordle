@@ -18,8 +18,10 @@ templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request, lang: str = "en"):
+    available_laguages = list(laguages.keys())
     context = {
         "lang": lang,
+        "next_lang": available_laguages[(available_laguages.index(lang) + 1) % len(available_laguages)],
         "play": laguages[lang]["templates"]["PLAY"]
     }
     return templates.TemplateResponse(request=request, name="index.html", context=context)

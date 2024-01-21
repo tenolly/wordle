@@ -50,7 +50,7 @@ a {
   display: flex;
   margin: auto;
   width: 552px;
-  animation: 2.55s slide_menu;
+  animation: 2.55s slide_left;
 }
 
 .menu-wrapper {
@@ -69,6 +69,35 @@ a {
   font-size: 25px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 3px;
+}
+
+.footer-links {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  display: flex;
+  width: fit-content;
+  animation: 3.06s slide_left;
+}
+.footer-links a {
+  margin: 2px;
+  display: block;
+  height: 60px;
+  width: 60px;
+  border: 1px solid rgb(190, 132, 43);
+}
+.footer-links a button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  color: rgb(190, 132, 43);
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+.footer-links a img {
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes slide_right {
@@ -90,7 +119,7 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes slide_menu {
+@keyframes slide_left {
   0% {
     transform: translateX(100vw);
   }

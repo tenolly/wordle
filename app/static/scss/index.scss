@@ -27,7 +27,7 @@
     display: flex;
     margin: auto;
     width: calc($big-title-width * 0.92);
-    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_menu;
+    animation: calc(($anim-basic-duration + 0.5s) * 1.5) slide_left;
 }
 
 .menu-wrapper {
@@ -47,6 +47,36 @@
     }
 }
 
+.footer-links {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    width: fit-content;
+    animation: calc(($anim-basic-duration + 0.5s) * 1.8) slide_left;
+
+    $footer-links-button-size: 60px;
+    a {
+        margin: 2px;
+        display: block;
+        height: $footer-links-button-size;
+        width: $footer-links-button-size;
+        border: 1px solid $default-second-color;
+        button {
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: inherit;
+            @include default-font(20px);
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
 @keyframes slide_right {
     0%   {transform: translateX(-80vw)}
     100% {transform: translateX(0)}
@@ -58,7 +88,7 @@
     100% {transform: translateY(0)}
 }
 
-@keyframes slide_menu {
+@keyframes slide_left {
     0%   {transform: translateX(100vw);}
     75%  {transform: translateX(100vw)}
     100% {transform: translateX(0)}
