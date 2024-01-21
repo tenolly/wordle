@@ -60,6 +60,7 @@ a {
 
 .answer-table-line {
   display: grid;
+  height: 62px;
   width: 100%;
   margin: 3px auto;
   grid-template-columns: repeat(5, 65px);
@@ -68,6 +69,7 @@ a {
   color: white;
   font-size: 38px;
   font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
   text-align: center;
   line-height: 59px;
   height: 59px;
@@ -117,10 +119,10 @@ a {
     transform: translateX(0);
   }
   33% {
-    transform: translateX(10px);
+    transform: translateX(7px);
   }
   66% {
-    transform: translateX(-10px);
+    transform: translateX(-7px);
   }
   100% {
     transform: translateX(0);
@@ -175,4 +177,52 @@ a {
   100% {
     transform: translateX(0);
   }
+}
+@keyframes flip {
+  0% {
+    background-color: rgb(51, 67, 189);
+    height: 59px;
+  }
+  50% {
+    background-color: rgb(51, 67, 189);
+    height: 0;
+    margin-top: 35.5px;
+  }
+  100% {
+    height: 59px;
+  }
+}
+@keyframes move_outside {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -35.5px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+.cell--state-n {
+  animation: 1s flip;
+  background-color: rgb(71, 70, 70);
+}
+.cell--state-n div {
+  animation: 1s move_outside;
+}
+
+.cell--state-g {
+  animation: 1s flip;
+  background-color: rgb(38, 168, 58);
+}
+.cell--state-g div {
+  animation: 1s move_outside;
+}
+
+.cell--state-y {
+  animation: 1s flip;
+  background-color: rgb(218, 215, 50);
+}
+.cell--state-y div {
+  animation: 1s move_outside;
 }

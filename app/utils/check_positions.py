@@ -2,7 +2,7 @@ def check_positions(hidden_word, suggested_word):
     if len(hidden_word) != len(suggested_word):
         raise ValueError("words must be the same length")
     
-    hidden_word, suggested_word = hidden_word.upper(), suggested_word.upper()
+    hidden_word, suggested_word = hidden_word.lower(), suggested_word.lower()
     
     colors = ["_"] * len(hidden_word)
 

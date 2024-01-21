@@ -5,9 +5,13 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from data import en_dict
+from .utils import get_daily_word, check_positions
+
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(
+    os.path.dirname(__file__), "static")), name="static")
 
 templates = Jinja2Templates(directory="app/templates")
 
@@ -24,5 +28,12 @@ async def game(request: Request):
 
 @app.post("/check_word", response_class=JSONResponse)
 async def check_word(request: Request):
-    word = (await request.json())["word"]
+    word = (await request.json())["word"].lower()
+    if len(word) != 5:
+        return JSONResponse({"error": "Not enough letters"}, status_code=400)
     
+    response = {"succses": word in en_dict}
+    if response["succses"]:
+        response["result"] = check_positions(get_daily_word(en_dict), word)
+
+    return JSONResponse(response)

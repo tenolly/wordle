@@ -9,8 +9,10 @@ let title_div = document.getElementById("title-table");
 let answer_table = document.getElementById("answer-table");
 for (i = 0; i < 6; ++i) {
     let div = document.createElement("div");
+    div.id = `line_${i}`
     div.className = "answer-table-line";
-    div.innerHTML = [...Array(5).keys()].map((num) => `<div id="line_${i}_cell_${num}"></div>`).join("");
+    div.innerHTML = [...Array(5).keys()].map(
+        (num) => `<div><div style="border: none !important;" id="line_${i}_cell_${num}"></div></div>`).join("");
     answer_table.append(div);
 }
 

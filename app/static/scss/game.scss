@@ -51,12 +51,14 @@
 
 .answer-table-line {
     display: grid;
+    height: calc($table-wordle-cell-size - $table-wordle-cell-margin);
     width: 100%;
     margin: $table-wordle-cell-margin auto;
     grid-template-columns: repeat(5, $table-wordle-cell-size);
 
     div {
         @include default-font(38px);
+        overflow: hidden;
         text-align: center;
         line-height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
@@ -103,8 +105,8 @@
 
 @keyframes trembling {
     0% {transform: translateX(0);}
-    33% {transform: translateX(10px);}
-    66% {transform: translateX(-10px);}
+    33% {transform: translateX(7px);}
+    66% {transform: translateX(-7px);}
     100% {transform: translateX(0);}
 }
 
@@ -143,3 +145,39 @@
     75%  {transform: translateX(-100vw)}
     100% {transform: translateX(0)}
 }
+
+
+$flip-animation-time: 1s;
+@mixin flip-animation($color) {
+    animation: $flip-animation-time flip;
+    background-color: $color;
+
+    div {
+        animation: $flip-animation-time move_outside;
+    }
+}
+
+@keyframes flip {
+    0%   {
+        background-color: $default-background-color;
+        height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+    }
+    50%  {
+        background-color: $default-background-color;
+        height: 0;
+        margin-top: calc($table-wordle-cell-size / 2 + $table-wordle-cell-margin);
+    }
+    100% {
+        height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+    }
+}
+
+@keyframes move_outside {
+    0%   {margin-top: 0}
+    50%  {margin-top: calc(-1 * ($table-wordle-cell-size / 2 + $table-wordle-cell-margin))}
+    100% {margin-top: 0}
+}
+
+.cell--state-n {@include flip-animation(rgb(71, 70, 70));}
+.cell--state-g {@include flip-animation(rgb(38, 168, 58));}
+.cell--state-y {@include flip-animation(rgb(218, 215, 50));}

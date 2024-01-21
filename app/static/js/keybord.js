@@ -9,6 +9,14 @@ function pressKeybordButton(value) {
     }
 }
 
+function pressBackspaceButton() {
+    if (currentCell > 0) {
+        --currentCell;
+        let cell = document.getElementById(`line_${currentLine}_cell_${currentCell}`);
+        cell.innerHTML = "";
+    }
+}
+
 async function pressEnterButton() {
     if (currentCell != 5) {
         alert("Not enough letters");
@@ -24,12 +32,23 @@ async function pressEnterButton() {
     });
 
     if (response.ok) {
-        //
+        const result = await response.json();
+        if (result["succses"]) {
+            result["result"].forEach((state, index) => {
+                let lineId = `line_${currentLine}_cell_${index}`
+                setTimeout(() => {
+                    let cell = document.getElementById(lineId);
+                    cell.parentElement.classList.add(`cell--state-${state.toLowerCase()}`);
+                }, 150 * index);
+            });
+            ++currentLine;
+            currentCell = 0;
+        } else {
+            let line = document.getElementById(`line_${currentLine}`)
+            line.classList.add("trembling-animation")
+            setTimeout(() => {line.classList.remove("trembling-animation")}, 300);
+        }
     } else {
-        //
+        alert("Server error");
     }
-}
-
-function pressBackspaceButton() {
-
 }
