@@ -46,7 +46,7 @@
 .answer-table {
     margin: auto;
     width: fit-content;
-    animation: calc($anim-basic-duration + 0.5s) slide_menu;
+    animation: calc($anim-basic-duration + 0.5s) slide_left;
 }
 
 .answer-table-line {
@@ -122,6 +122,52 @@ $flip-animation-time: 1s;
 .cell--state-g--animation {@include flip-animation($state-g-color);}
 .cell--state-y--animation {@include flip-animation($state-y-color);}
 
+.result-modal-window {
+    position: absolute;
+    opacity: 1 !important;
+    height: $result-modal-window-height;
+    width: $result-modal-window-width;
+    top: calc((100vh - $result-modal-window-height) / 2);
+    left: calc((100vw -  $result-modal-window-width) / 2);
+    background-color: $default-background-color;
+    border: 3px solid $default-second-color;
+}
+
+.result-modal-window__title {
+    @include default-font(38px);
+    margin: $result-modal-window-height * 0.04 auto calc($result-modal-window-height * 0.04 - $result-modal-window-table-margin);
+    width: $result-modal-window-width;
+    text-align: center;
+}
+
+.result-table-line {
+    display: grid;
+    width: fit-content;
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.result-table-line__cell {
+    margin: $result-modal-window-table-margin;
+    height: calc($result-modal-window-height * 0.8 / 6.35 - $result-modal-window-table-margin * 2);
+    width: calc($result-modal-window-height * 0.8 / 6.35  - $result-modal-window-table-margin * 2);
+    border: 2px solid $default-second-color;
+}
+
+.slide_left--animation {
+    animation: calc($flip-animation-time + 0.9s) slide_left;
+}
+
+.disappearance--animation {
+    opacity: 0.3;
+    animation: calc($flip-animation-time + 0.9s) disappearance;
+}
+
+@keyframes disappearance {
+    0%   {opacity: 1;}
+    75%   {opacity: 1;}
+    100% {opacity: 0.3;}
+}
 
 @keyframes trembling {
     0% {transform: translateX(0);}
@@ -154,7 +200,7 @@ $flip-animation-time: 1s;
     100% {transform: translateY(0);}
 }
 
-@keyframes slide_menu {
+@keyframes slide_left {
     0%   {transform: translateX(100vw);}
     75%  {transform: translateX(100vw)}
     100% {transform: translateX(0)}

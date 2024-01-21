@@ -59,7 +59,7 @@ a {
 .answer-table {
   margin: auto;
   width: fit-content;
-  animation: 1.7s slide_menu;
+  animation: 1.7s slide_left;
 }
 
 .answer-table-line {
@@ -156,6 +156,60 @@ a {
   animation: 1s move_outside;
 }
 
+.result-modal-window {
+  position: absolute;
+  opacity: 1 !important;
+  height: 550px;
+  width: 450px;
+  top: calc((100vh - 550px) / 2);
+  left: calc((100vw - 450px) / 2);
+  background-color: rgb(38, 39, 47);
+  border: 3px solid rgb(190, 132, 43);
+}
+
+.result-modal-window__title {
+  color: rgb(190, 132, 43);
+  font-size: 38px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 22px auto 19px;
+  width: 450px;
+  text-align: center;
+}
+
+.result-table-line {
+  display: grid;
+  width: fit-content;
+  margin: auto;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.result-table-line__cell {
+  margin: 3px;
+  height: 63.2913385827px;
+  width: 63.2913385827px;
+  border: 2px solid rgb(190, 132, 43);
+}
+
+.slide_left--animation {
+  animation: 1.9s slide_left;
+}
+
+.disappearance--animation {
+  opacity: 0.3;
+  animation: 1.9s disappearance;
+}
+
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 @keyframes trembling {
   0% {
     transform: translateX(0);
@@ -198,7 +252,7 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes slide_menu {
+@keyframes slide_left {
   0% {
     transform: translateX(100vw);
   }
