@@ -1,7 +1,7 @@
 ## wordle
 Will be soon
 ## Installation
-> pip install -r requirements.txt
+> pip install -r requirements/requirements.txt
 ## Run
 > uvicorn app.main:app
 
