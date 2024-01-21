@@ -1,17 +1,241 @@
-/* Error: Undefined mixin.
- *     ,
- * 149 | .cell--state-n {@include flip-animation($state-n-color);}
- *     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *     '
- *   app\static\scss\game.scss 149:17  root stylesheet */
+html, body {
+  background-color: rgb(40, 41, 48);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+a {
+  text-decoration: none;
+}
+
+.title-table {
+  display: grid;
+  width: fit-content;
+  margin: 15px auto 9px;
+  grid-template-columns: repeat(6, 35px);
+  animation: 1.2s slide_top;
+  color: rgb(185, 127, 39);
+  font-size: 38px;
+  font-family: "Courier New", Courier, monospace;
+}
+.title-table div {
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 149 \2502  .cell--state-n {@include flip-animation($state-n-color);}\d\a     \2502                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   app\\static\\scss\\game.scss 149:17  root stylesheet";
+  text-align: center;
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  margin: auto;
+  width: 552px;
+  left: calc((100vw - 552px) / 2);
+  top: 200vh;
+}
+
+.menu-wrapper {
+  display: block;
+  height: 45px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid rgb(185, 127, 39);
+  animation: 1.2s slide_bottom;
+}
+.menu-wrapper button {
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  border: none;
+  color: rgb(185, 127, 39);
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 3px;
+}
+
+.answer-table {
+  margin: auto;
+  width: fit-content;
+  animation: 1.7s slide_menu;
+}
+
+.answer-table-line {
+  display: grid;
+  height: 62px;
+  width: 100%;
+  margin: 4px auto;
+  grid-template-columns: repeat(5, 66px);
+}
+.answer-table-line div {
+  color: rgb(185, 127, 39);
+  font-size: 37px;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+  text-align: center;
+  line-height: 58px;
+  height: 58px;
+  width: 58px;
+  border: 1px solid rgb(185, 127, 39);
+}
+
+.trembling-animation {
+  animation: trembling 0.3s;
+}
+
+.keybord {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  animation: 1.7s slide_keybord;
+}
+
+.keybord__line {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+.keybord__line button {
+  color: rgb(185, 127, 39);
+  font-size: 27px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 3px;
+  height: 58px;
+  width: 52px;
+  border-radius: 5px;
+  border: 1px solid rgb(185, 127, 39);
+  background-color: rgb(40, 41, 48);
+}
+
+.keybord__line-button--long-text {
+  width: 78px !important;
+  font-size: 18px !important;
+}
+
+.backspace-svg {
+  margin: 15px auto;
+}
+
+.cell--state-n--color {
+  background-color: rgb(36, 36, 36) !important;
+}
+
+.cell--state-g--color {
+  background-color: rgb(11, 100, 8) !important;
+}
+
+.cell--state-y--color {
+  background-color: rgb(90, 88, 7) !important;
+}
+
+.cell--state-n--animation {
+  animation: 1s flip;
+  background-color: rgb(36, 36, 36);
+}
+.cell--state-n--animation div {
+  animation: 1s move_outside;
+}
+
+.cell--state-g--animation {
+  animation: 1s flip;
+  background-color: rgb(11, 100, 8);
+}
+.cell--state-g--animation div {
+  animation: 1s move_outside;
+}
+
+.cell--state-y--animation {
+  animation: 1s flip;
+  background-color: rgb(90, 88, 7);
+}
+.cell--state-y--animation div {
+  animation: 1s move_outside;
+}
+
+@keyframes trembling {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(7px);
+  }
+  66% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide_top {
+  0% {
+    font-size: 78px;
+    width: fit-content;
+    transform: translateY(calc(40vh - 15px));
+    grid-template-columns: repeat(6, 100px);
+  }
+  50% {
+    font-size: 78px;
+    width: fit-content;
+    transform: translateY(calc(40vh - 15px));
+    grid-template-columns: repeat(6, 100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide_bottom {
+  0% {
+    transform: translateY(calc(-160vh + 0px + 88px));
+  }
+  40% {
+    transform: translateY(calc(-160vh + 0px + 88px));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide_menu {
+  0% {
+    transform: translateX(100vw);
+  }
+  75% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide_keybord {
+  0% {
+    transform: translateX(-100vw);
+  }
+  75% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes flip {
+  0% {
+    background-color: rgb(40, 41, 48);
+    height: 58px;
+  }
+  50% {
+    background-color: rgb(40, 41, 48);
+    height: 0;
+    margin-top: 37px;
+  }
+  100% {
+    height: 58px;
+  }
+}
+@keyframes move_outside {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -37px;
+  }
+  100% {
+    margin-top: 0;
+  }
 }

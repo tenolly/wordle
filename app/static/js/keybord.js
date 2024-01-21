@@ -34,13 +34,20 @@ async function pressEnterButton() {
     if (response.ok) {
         const result = await response.json();
         if (result["succses"]) {
-            result["result"].forEach((state, index) => {
-                let lineId = `line_${currentLine}_cell_${index}`
+            for (i = 0; i < result["word"].length; ++i) {
+                let savedI = i;
+                let savedCurrentLine = currentLine;
                 setTimeout(() => {
-                    let cell = document.getElementById(lineId);
-                    cell.parentElement.classList.add(`cell--state-${state.toLowerCase()}`);
-                }, 150 * index);
-            });
+                    let cell = document.getElementById(`line_${savedCurrentLine}_cell_${savedI}`);
+                    cell.parentElement.classList.add(`cell--state-${result["result"][savedI].toLowerCase()}--animation`);
+                }, 150 * i);
+                setTimeout(() => {
+                    let key = document.getElementById(`button_${result["word"][savedI].toLowerCase()}`);
+                    if (key.className != "cell--state-g--color") {
+                        key.className = `cell--state-${result["result"][savedI].toLowerCase()}--color`;
+                    }
+                }, 400 + 150 * i);
+            };
             ++currentLine;
             currentCell = 0;
         } else {

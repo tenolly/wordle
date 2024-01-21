@@ -29,6 +29,7 @@ keybord.forEach((line) => {
     line.forEach((char) => {
         let button = document.createElement("button");
         if (char.length == 1) {
+            button.id = `button_${char.toLowerCase()}`
             button.onclick = () => pressKeybordButton(char)
         } else {
             button.className = "keybord__line-button--long-text"

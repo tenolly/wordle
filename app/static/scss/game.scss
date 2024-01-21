@@ -103,6 +103,25 @@
     margin: 15px auto;
 }
 
+.cell--state-n--color {background-color: $state-n-color !important}
+.cell--state-g--color {background-color: $state-g-color !important}
+.cell--state-y--color {background-color: $state-y-color !important}
+
+$flip-animation-time: 1s;
+@mixin flip-animation($color) {
+    animation: $flip-animation-time flip;
+    background-color: $color;
+
+    div {
+        animation: $flip-animation-time move_outside;
+    }
+}
+
+.cell--state-n--animation {@include flip-animation($state-n-color);}
+.cell--state-g--animation {@include flip-animation($state-g-color);}
+.cell--state-y--animation {@include flip-animation($state-y-color);}
+
+
 @keyframes trembling {
     0% {transform: translateX(0);}
     33% {transform: translateX(7px);}
@@ -144,20 +163,6 @@
     0%   {transform: translateX(-100vw);}
     75%  {transform: translateX(-100vw)}
     100% {transform: translateX(0)}
-}
-
-.cell--state-n {@include flip-animation($state-n-color);}
-.cell--state-g {@include flip-animation($state-g-color);}
-.cell--state-y {@include flip-animation($state-y-color);}
-
-$flip-animation-time: 1s;
-@mixin flip-animation($color) {
-    animation: $flip-animation-time flip;
-    background-color: $color;
-
-    div {
-        animation: $flip-animation-time move_outside;
-    }
 }
 
 @keyframes flip {

@@ -28,12 +28,13 @@ async def game(request: Request):
 
 @app.post("/check_word", response_class=JSONResponse)
 async def check_word(request: Request):
-    word = (await request.json())["word"].lower()
-    if len(word) != 5:
-        return JSONResponse({"error": "Not enough letters"}, status_code=400)
+    response = {"word": (await request.json())["word"].lower()}
+    if len(response["word"]) != 5:
+        response["error"] = "Not enough letters"
+        return JSONResponse(response, status_code=400)
     
-    response = {"succses": word in en_dict}
+    response["succses"] = response["word"] in en_dict
     if response["succses"]:
-        response["result"] = check_positions(get_daily_word(en_dict), word)
+        response["result"] = check_positions(get_daily_word(en_dict), response["word"])
 
     return JSONResponse(response)
