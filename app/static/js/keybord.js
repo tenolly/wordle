@@ -19,7 +19,9 @@ function pressBackspaceButton() {
 
 async function pressEnterButton() {
     if (currentCell != 5) {
-        alert("Not enough letters");
+        let line = document.getElementById(`line_${currentLine}`)
+        line.classList.add("trembling-animation")
+        setTimeout(() => {line.classList.remove("trembling-animation")}, 300);
         return;
     }
 
