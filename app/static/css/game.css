@@ -16,16 +16,15 @@ a {
 .title-table {
   display: grid;
   width: fit-content;
-  margin: 13px auto 10px;
+  margin: 13px auto 3px;
   grid-template-columns: repeat(6, 34.6666666667px);
   animation: 1.2s slide_top;
   color: rgb(185, 127, 39);
-  font-size: 39px;
+  font-size: 37px;
   font-family: "Courier New", Courier, monospace;
 }
 .title-table div {
   display: block;
-  margin-left: -10.5px;
   text-align: center;
 }
 
@@ -70,12 +69,14 @@ a {
   margin: 4.25px auto;
   grid-template-columns: repeat(5, 65px);
 }
-.answer-table-line div {
+
+.answer-table-line__cell {
   color: rgb(185, 127, 39);
   font-size: 37px;
   font-family: "Courier New", Courier, monospace;
   overflow: hidden;
   text-align: center;
+  margin: 4.25px;
   line-height: 56.5px;
   height: 56.5px;
   width: 56.5px;

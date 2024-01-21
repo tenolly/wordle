@@ -7,12 +7,11 @@
     margin: $small-title-margin-top auto $small-title-margin-bottom;
     grid-template-columns: repeat(6, calc($small-title-width / 6));
     animation: $anim-basic-duration slide_top;
-
-    @include default-font(39px);
+    
+    @include default-font(37px);
 
     div {
         display: block;
-        margin-left: -10.5px;
         text-align: center;
     }
 }
@@ -56,16 +55,17 @@
     width: 100%;
     margin: $table-wordle-cell-margin auto;
     grid-template-columns: repeat(5, $table-wordle-cell-size);
+}
 
-    div {
-        @include default-font(37px);
-        overflow: hidden;
-        text-align: center;
-        line-height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
-        height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
-        width: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
-        border: 1px solid $default-second-color;
-    }
+.answer-table-line__cell {
+    @include default-font(37px);
+    overflow: hidden;
+    text-align: center;
+    margin: $table-wordle-cell-margin;
+    line-height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+    height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+    width: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
+    border: 1px solid $default-second-color;
 }
 
 .trembling-animation {

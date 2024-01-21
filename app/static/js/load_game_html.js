@@ -12,7 +12,8 @@ for (i = 0; i < 6; ++i) {
     div.id = `line_${i}`
     div.className = "answer-table-line";
     div.innerHTML = [...Array(5).keys()].map(
-        (num) => `<div><div style="border: none !important;" id="line_${i}_cell_${num}"></div></div>`).join("");
+        (num) => `<div class="answer-table-line__cell"><div style="border: none !important;" id="line_${i}_cell_${num}"></div></div>`)
+        .join("");
     answer_table.append(div);
 }
 
