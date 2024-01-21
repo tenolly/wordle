@@ -19,7 +19,7 @@ a {
   margin: 40vh auto 0px;
   grid-template-columns: repeat(6, 100px);
   animation: 2.55s slide_top;
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 78px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -58,14 +58,14 @@ a {
   height: 45px;
   width: 100%;
   margin: 0px auto;
-  border: 2px solid rgb(185, 127, 39);
+  border: 2px solid rgb(190, 132, 43);
 }
 .menu-wrapper button {
   height: 100%;
   width: 100%;
   background-color: inherit;
   border: none;
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 25px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 3px;

@@ -19,7 +19,7 @@ a {
   margin: 13px auto 3px;
   grid-template-columns: repeat(6, 34.6666666667px);
   animation: 1.2s slide_top;
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 37px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -42,7 +42,7 @@ a {
   height: 45px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid rgb(185, 127, 39);
+  border: 1px solid rgb(190, 132, 43);
   animation: 1.2s slide_bottom;
 }
 .menu-wrapper button {
@@ -50,7 +50,7 @@ a {
   width: 100%;
   background-color: inherit;
   border: none;
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 25px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 3px;
@@ -71,7 +71,7 @@ a {
 }
 
 .answer-table-line__cell {
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 37px;
   font-family: "Courier New", Courier, monospace;
   overflow: hidden;
@@ -80,7 +80,7 @@ a {
   line-height: 56.5px;
   height: 56.5px;
   width: 56.5px;
-  border: 1px solid rgb(185, 127, 39);
+  border: 1px solid rgb(190, 132, 43);
 }
 
 .trembling-animation {
@@ -100,14 +100,14 @@ a {
   width: fit-content;
 }
 .keybord__line button {
-  color: rgb(185, 127, 39);
+  color: rgb(190, 132, 43);
   font-size: 27px;
   font-family: "Courier New", Courier, monospace;
   margin: 3px;
   height: 58px;
   width: 52px;
   border-radius: 5px;
-  border: 1px solid rgb(185, 127, 39);
+  border: 1px solid rgb(190, 132, 43);
   background-color: rgb(38, 39, 47);
 }
 
