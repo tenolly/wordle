@@ -8,10 +8,11 @@
     grid-template-columns: repeat(6, calc($small-title-width / 6));
     animation: $anim-basic-duration slide_top;
 
-    @include default-font(38px);
+    @include default-font(39px);
 
     div {
         display: block;
+        margin-left: -10.5px;
         text-align: center;
     }
 }

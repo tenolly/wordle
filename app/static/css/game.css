@@ -16,15 +16,16 @@ a {
 .title-table {
   display: grid;
   width: fit-content;
-  margin: 15px auto 9px;
-  grid-template-columns: repeat(6, 35px);
+  margin: 13px auto 10px;
+  grid-template-columns: repeat(6, 34.6666666667px);
   animation: 1.2s slide_top;
   color: rgb(185, 127, 39);
-  font-size: 38px;
+  font-size: 39px;
   font-family: "Courier New", Courier, monospace;
 }
 .title-table div {
   display: block;
+  margin-left: -10.5px;
   text-align: center;
 }
 
@@ -64,10 +65,10 @@ a {
 
 .answer-table-line {
   display: grid;
-  height: 61.75px;
+  height: 60.75px;
   width: 100%;
   margin: 4.25px auto;
-  grid-template-columns: repeat(5, 66px);
+  grid-template-columns: repeat(5, 65px);
 }
 .answer-table-line div {
   color: rgb(185, 127, 39);
@@ -75,9 +76,9 @@ a {
   font-family: "Courier New", Courier, monospace;
   overflow: hidden;
   text-align: center;
-  line-height: 57.5px;
-  height: 57.5px;
-  width: 57.5px;
+  line-height: 56.5px;
+  height: 56.5px;
+  width: 56.5px;
   border: 1px solid rgb(185, 127, 39);
 }
 
@@ -172,13 +173,13 @@ a {
   0% {
     font-size: 78px;
     width: fit-content;
-    transform: translateY(calc(40vh - 15px));
+    transform: translateY(calc(40vh - 13px));
     grid-template-columns: repeat(6, 100px);
   }
   50% {
     font-size: 78px;
     width: fit-content;
-    transform: translateY(calc(40vh - 15px));
+    transform: translateY(calc(40vh - 13px));
     grid-template-columns: repeat(6, 100px);
   }
   100% {
@@ -221,15 +222,15 @@ a {
 @keyframes flip {
   0% {
     background-color: rgb(38, 39, 47);
-    height: 57.5px;
+    height: 56.5px;
   }
   50% {
     background-color: rgb(38, 39, 47);
     height: 0;
-    margin-top: 37.25px;
+    margin-top: 36.75px;
   }
   100% {
-    height: 57.5px;
+    height: 56.5px;
   }
 }
 @keyframes move_outside {
@@ -237,7 +238,7 @@ a {
     margin-top: 0;
   }
   50% {
-    margin-top: -37.25px;
+    margin-top: -36.75px;
   }
   100% {
     margin-top: 0;
