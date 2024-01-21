@@ -1,9 +1,7 @@
 @import "params";
 
-$default-background-color: rgb(51, 67, 189);
-
 @mixin default-font($font-size) {
-    color: white;
+    color: $default-second-color;
     font-size: $font-size;
     font-family: 'Courier New', Courier, monospace;
 }

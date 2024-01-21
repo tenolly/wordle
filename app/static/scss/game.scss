@@ -8,7 +8,7 @@
     grid-template-columns: repeat(6, calc($small-title-width / 6));
     animation: $anim-basic-duration slide_top;
 
-    @include default-font(37px);
+    @include default-font(38px);
 
     div {
         display: block;
@@ -30,7 +30,7 @@
     height: 45px;
     width: 100%;
     margin: 0 auto;
-    border: 2px solid rgb(255, 255, 255);
+    border: 1px solid $default-second-color;
     animation: $anim-basic-duration slide_bottom;
 
     button {
@@ -57,13 +57,13 @@
     grid-template-columns: repeat(5, $table-wordle-cell-size);
 
     div {
-        @include default-font(38px);
+        @include default-font(37px);
         overflow: hidden;
         text-align: center;
         line-height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         height: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
         width: calc($table-wordle-cell-size - $table-wordle-cell-margin * 2);
-        border: 1px solid rgb(255, 255, 255);
+        border: 1px solid $default-second-color;
     }
 }
 
@@ -84,19 +84,19 @@
     width: fit-content;
 
     button {
-        @include default-font(20px);
-        margin: 2px;
+        @include default-font(27px);
+        margin: $keybord-cell-margin;
         height: $keybord-cell-height;
         width: $keybord-cell-width;
         border-radius: 5px;
-        border: 1px solid rgb(255, 255, 255);
+        border: 1px solid $default-second-color;
         background-color: $default-background-color;
     }
 }
 
 .keybord__line-button--long-text {
     width: calc($keybord-cell-width * 1.5) !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
 }
 
 .backspace-svg {
@@ -146,6 +146,9 @@
     100% {transform: translateX(0)}
 }
 
+.cell--state-n {@include flip-animation($state-n-color);}
+.cell--state-g {@include flip-animation($state-g-color);}
+.cell--state-y {@include flip-animation($state-y-color);}
 
 $flip-animation-time: 1s;
 @mixin flip-animation($color) {
@@ -177,7 +180,3 @@ $flip-animation-time: 1s;
     50%  {margin-top: calc(-1 * ($table-wordle-cell-size / 2 + $table-wordle-cell-margin))}
     100% {margin-top: 0}
 }
-
-.cell--state-n {@include flip-animation(rgb(71, 70, 70));}
-.cell--state-g {@include flip-animation(rgb(38, 168, 58));}
-.cell--state-y {@include flip-animation(rgb(218, 215, 50));}

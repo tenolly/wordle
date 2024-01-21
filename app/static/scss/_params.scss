@@ -1,17 +1,23 @@
-$default-background-color: rgb(51, 67, 189);
+$default-background-color: rgb(40, 41, 48);
+$default-second-color: rgb(185, 127, 39);  // don't forget change this value in images/backspace.svg
+
+$state-n-color: rgb(36, 36, 36);
+$state-g-color: rgb(11, 100, 8);
+$state-y-color: rgb(90, 88, 7);
 
 $big-title-width: 600px;
 $small-title-width: 210px;
 
 $big-title-margin-top: 40vh;
 $big-title-margin-bottom: 0px;
-$small-title-margin-top: 20px;
-$small-title-margin-bottom: 10px;
+$small-title-margin-top: 15px;
+$small-title-margin-bottom: 9px;
 
 $anim-basic-duration: 1.2s;
 
-$table-wordle-cell-size: 65px;
-$table-wordle-cell-margin: 3px;
+$table-wordle-cell-size: 66px;
+$table-wordle-cell-margin: 4px;
 
 $keybord-cell-height: 58px;
 $keybord-cell-width: 52px;
+$keybord-cell-margin: 3px;
