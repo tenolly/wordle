@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 <body>
     <div class="title-table" id="title-table"></div>
     <div class="menu">
-        <a href="/game" class="menu-wrapper"><button>PLAY</button></a>
+        <a href="/game?lang={{ lang }}" class="menu-wrapper"><button>{{ play }}</button></a>
     </div>
 </body>
 

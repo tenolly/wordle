@@ -3,3 +3,5 @@ fastapi
 jinja2
 PyEnchant
 pytest
+argparse
+colorama

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="UTF-8">
     <title>Wordle</title>
     <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/game.css' )}}">
-    <script src="{{ url_for( 'static', path='js/keyboard.js' )}}"></script>
+    <script src="{{ url_for( 'static', path='js/keyboard_events.js' )}}"></script>
     <script defer src="{{ url_for( 'static', path='js/load_game_html.js' )}}"></script>
+    <script defer src="{{ url_for( 'static', path='js/keyboards/' + lang + '_keyboard.js' )}}"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <div class="keybord" id="keybord-table"></div>
         <div class="menu trembling-animation">
             <a href="/game" class="menu-wrapper">
-                <button class="menu-wrapper__button">PLAY</button>
+                <button class="menu-wrapper__button">{{ play }}</button>
             </a>
         </div>
     </div>

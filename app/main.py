@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from data import en_dict
+from data import laguages
 from .utils import get_daily_word, check_positions
 
 
@@ -17,24 +17,36 @@ templates = Jinja2Templates(directory="app/templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request):
-    return templates.TemplateResponse(request=request, name="index.html")
+async def index(request: Request, lang: str = "en"):
+    context = {
+        "lang": lang,
+        "play": laguages[lang]["templates"]["PLAY"]
+    }
+    return templates.TemplateResponse(request=request, name="index.html", context=context)
 
 
 @app.get("/game", response_class=HTMLResponse)
-async def game(request: Request):
-    return templates.TemplateResponse(request=request, name="game.html")
+async def game(request: Request, lang: str = "en"):
+    context = {
+        "lang": lang,
+        "play": laguages[lang]["templates"]["PLAY"]
+    }
+    return templates.TemplateResponse(request=request, name="game.html", context=context)
 
 
 @app.post("/check_word", response_class=JSONResponse)
 async def check_word(request: Request):
-    response = {"word": (await request.json())["word"].lower()}
+    json_responce = await request.json()
+    word, lang = json_responce["word"].lower(), json_responce["lang"].lower()
+
+    response = {"word": word}
     if len(response["word"]) != 5:
-        response["error"] = "Not enough letters"
+        response["error"] = laguages[lang]["errors"]["not_enough_letters"]
         return JSONResponse(response, status_code=400)
-    
-    response["succses"] = response["word"] in en_dict
+
+    response["succses"] = response["word"] in laguages[lang]["dict"]
     if response["succses"]:
-        response["result"] = check_positions(get_daily_word(en_dict), response["word"])
+        response["result"] = check_positions(get_daily_word(
+            laguages[lang]["dict"]), response["word"])
 
     return JSONResponse(response)
