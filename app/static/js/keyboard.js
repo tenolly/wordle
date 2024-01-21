@@ -75,3 +75,9 @@ async function pressEnterButton() {
         alert("Server error");
     }
 }
+
+addEventListener("keydown", (event) => {
+    if (event.key == "Enter") {pressEnterButton()}
+    else if (event.key == "Backspace") {pressBackspaceButton()}
+    else if (/^[A-Z]$/i.test(event.key)) {pressKeybordButton(event.key.toUpperCase());}
+});
