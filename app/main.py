@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -52,3 +53,9 @@ async def check_word(request: Request):
             laguages[lang]["dict"]), response["word"])
 
     return JSONResponse(response)
+
+
+@app.get("/get_server_time", response_class=JSONResponse)
+async def game(request: Request):
+    time_now = datetime.datetime.now()
+    return JSONResponse({"hour": time_now.hour, "minute": time_now.minute, "second": time_now.second})

@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/index.css' )}}">
     <script defer src="{{ url_for( 'static', path='js/load_index_html.js' )}}"></script>
+    <script defer src="{{ url_for( 'static', path='js/init_clocks.js' )}}"></script>
 </head>
 
 <body>
@@ -15,8 +16,24 @@
         <a href="/game?lang={{ lang }}" class="menu-wrapper"><button>{{ play }}</button></a>
     </div>
     <div class="footer-links">
-        <a href="/?lang={{ next_lang }}" class="change-language"><button>{{ lang.upper() }}</button></a>
-        <a href="https://github.com/tenolly/wordle" class="change-language">
+        <div class="footer-links__container">
+            <button>
+                <div class="clock">
+                    <div class="clock__point"></div>
+                    <div class="clock_hand_container" id="clock__hours">
+                        <div class="clock__hours"></div>
+                    </div>
+                    <div class="clock_hand_container" id="clock__minutes">
+                        <div class="clock__minutes"></div>
+                    </div>
+                    <div class="clock_hand_container" id="clock__seconds">
+                        <div class="clock__seconds clock__seconds--color"></div>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <a href="/?lang={{ next_lang }}" class="footer-links__container"><button>{{ lang.upper() }}</button></a>
+        <a href="https://github.com/tenolly/wordle" class="footer-links__container">
             <img src="{{ url_for( 'static', path='images/github.svg' )}}">
         </a>
     </div>

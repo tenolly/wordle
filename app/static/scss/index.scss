@@ -54,28 +54,79 @@
     display: flex;
     width: fit-content;
     animation: calc(($anim-basic-duration + 0.5s) * 1.8) slide_left;
+}
 
-    $footer-links-button-size: 60px;
-    a {
-        margin: 2px;
-        display: block;
-        height: $footer-links-button-size;
-        width: $footer-links-button-size;
-        border: 1px solid $default-second-color;
-        button {
-            height: 100%;
-            width: 100%;
-            border: none;
-            background-color: inherit;
-            @include default-font(20px);
-        }
-        img {
-            height: 100%;
-            width: 100%;
-        }
+$footer-links-button-size: 60px;
+$footer-links-button-margin: 2px;
+.footer-links__container {
+    margin: $footer-links-button-margin;
+    display: block;
+    height: $footer-links-button-size;
+    width: $footer-links-button-size;
+    border: 1px solid $default-second-color;
+    button {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background-color: inherit;
+        @include default-font(20px);
+    }
+    img {
+        height: 100%;
+        width: 100%;
     }
 }
 
+.clock {
+    margin: calc($footer-links-button-size / 6 - 3.2px - $footer-links-button-margin);
+    height: calc($footer-links-button-size / 3 * 2);
+    width: calc($footer-links-button-size / 3 * 2);
+    border: 2px solid $default-second-color;
+    border-radius: 50%;
+}
+
+.clock__point {
+    position: fixed;
+    height: 1.5px;
+    width: 1.5px;
+    margin: calc($footer-links-button-size / 3 - 1.75px) calc($footer-links-button-size / 3 - 1.75px);
+    border: 1px solid $default-second-color;
+    background-color: $default-second-color;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.clock_hand_container {
+    position: fixed;
+    height: calc($footer-links-button-size / 3 * 2);
+    width: calc($footer-links-button-size / 3 * 2);
+}
+
+@mixin clock_hand($width, $height, $margin-delta, $transform-origin) {
+    position: fixed;
+    margin: calc($footer-links-button-size / 3 - $height + $margin-delta) calc($footer-links-button-size / 3 - $width / 2) 0;
+    height: $height;
+    width: $width;
+    transform-origin: $transform-origin;
+    background-color: $default-second-color;
+}
+
+.clock__hours {
+    @include clock_hand(1.7px, 12.5px, 0px, 50% 100%);
+    animation: 86400s rotating infinite linear;
+}
+.clock__minutes {
+    @include clock_hand(1.7px, 18px, 0px, 50% 100%);
+    animation: 3600s rotating infinite linear;
+}
+.clock__seconds {
+    @include clock_hand(1px, 19px, 4px, 50% 79.4%);
+    animation: 60s rotating infinite steps(60);
+}
+
+.clock__seconds--color {
+    background-color: rgb(218, 156, 45) !important;
+}
 
 @keyframes slide_right {
     0%   {transform: translateX(-80vw)}
@@ -83,7 +134,7 @@
 }
 
 @keyframes slide_top {
-    0%   {transform: translateY(8vh);}
+    0%   {transform: translateY(8vh)}
     75%  {transform: translateY(8vh)}
     100% {transform: translateY(0)}
 }
@@ -98,4 +149,9 @@
     0%   {transform: translateX(-100vw);}
     75%  {transform: translateX(-100vw)}
     100% {transform: translateX(0)}
+}
+
+@keyframes rotating{
+    0% {transform: rotate(0turn)}
+    100% {transform: rotate(1turn)}
 }
