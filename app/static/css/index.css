@@ -111,8 +111,9 @@ a {
 
 .clock__point {
   position: fixed;
+  height: 2px;
+  width: 2px;
   margin: 19px 19px;
-  border: 0.85px solid rgb(190, 132, 43);
   background-color: rgb(190, 132, 43);
   border-radius: 50%;
   z-index: 4;
@@ -126,9 +127,10 @@ a {
 
 .clock__hours {
   position: fixed;
-  margin: 5.5px 19.15px 0;
+  margin: 5.5px 19.07px 0;
   height: 14.5px;
-  width: 1.7px;
+  width: 1.86px;
+  border-radius: 50%;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
   animation: 86400s rotating infinite linear;
@@ -136,9 +138,10 @@ a {
 
 .clock__minutes {
   position: fixed;
-  margin: 3.5px 19.15px 0;
+  margin: 3.5px 19.07px 0;
   height: 16.5px;
-  width: 1.7px;
+  width: 1.86px;
+  border-radius: 50%;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
   animation: 3600s rotating infinite linear;
