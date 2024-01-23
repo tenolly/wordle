@@ -47,8 +47,8 @@ async def check_word(request: Request):
         response["error"] = laguages[lang]["errors"]["not_enough_letters"]
         return JSONResponse(response, status_code=400)
 
-    response["succses"] = response["word"] in laguages[lang]["dict"]
-    if response["succses"]:
+    response["success"] = response["word"] in laguages[lang]["dict"]
+    if response["success"]:
         response["result"] = check_positions(get_daily_word(
             laguages[lang]["dict"]), response["word"])
 

@@ -111,10 +111,8 @@ a {
 
 .clock__point {
   position: fixed;
-  height: 1.5px;
-  width: 1.5px;
-  margin: 18.25px 18.25px;
-  border: 1px solid rgb(190, 132, 43);
+  margin: 19px 19px;
+  border: 0.85px solid rgb(190, 132, 43);
   background-color: rgb(190, 132, 43);
   border-radius: 50%;
   z-index: 4;
@@ -128,8 +126,8 @@ a {
 
 .clock__hours {
   position: fixed;
-  margin: 7.5px 19.15px 0;
-  height: 12.5px;
+  margin: 5.5px 19.15px 0;
+  height: 14.5px;
   width: 1.7px;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
@@ -138,8 +136,8 @@ a {
 
 .clock__minutes {
   position: fixed;
-  margin: 2px 19.15px 0;
-  height: 18px;
+  margin: 3.5px 19.15px 0;
+  height: 16.5px;
   width: 1.7px;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
@@ -148,16 +146,12 @@ a {
 
 .clock__seconds {
   position: fixed;
-  margin: 5px 19.5px 0;
-  height: 19px;
-  width: 1px;
-  transform-origin: 50% 79.4%;
+  margin: 6.5px 19.15px 0;
+  height: 16px;
+  width: 1.7px;
+  transform-origin: 50% 84.4%;
   background-color: rgb(190, 132, 43);
   animation: 60s rotating infinite steps(60);
-}
-
-.clock__seconds--color {
-  background-color: rgb(218, 156, 45) !important;
 }
 
 @keyframes slide_right {

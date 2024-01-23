@@ -54,7 +54,7 @@ async function pressEnterButton() {
 
     if (response.ok) {
         const result = await response.json();
-        if (result["succses"]) {
+        if (result["success"]) {
             let is_win_game = true;
             for (i = 0; i < result["word"].length; ++i) {
                 is_win_game = is_win_game & (result["result"][i].toLowerCase() == "g");

@@ -87,10 +87,8 @@ $footer-links-button-margin: 2px;
 
 .clock__point {
     position: fixed;
-    height: 1.5px;
-    width: 1.5px;
-    margin: calc($footer-links-button-size / 3 - 1.75px) calc($footer-links-button-size / 3 - 1.75px);
-    border: 1px solid $default-second-color;
+    margin: calc($footer-links-button-size / 3 - 1px) calc($footer-links-button-size / 3 - 1px);
+    border: 0.85px solid $default-second-color;
     background-color: $default-second-color;
     border-radius: 50%;
     z-index: 4;
@@ -112,20 +110,16 @@ $footer-links-button-margin: 2px;
 }
 
 .clock__hours {
-    @include clock_hand(1.7px, 12.5px, 0px, 50% 100%);
+    @include clock_hand(1.7px, 14.5px, 0px, 50% 100%);
     animation: 86400s rotating infinite linear;
 }
 .clock__minutes {
-    @include clock_hand(1.7px, 18px, 0px, 50% 100%);
+    @include clock_hand(1.7px, 16.5px, 0px, 50% 100%);
     animation: 3600s rotating infinite linear;
 }
 .clock__seconds {
-    @include clock_hand(1px, 19px, 4px, 50% 79.4%);
+    @include clock_hand(1.7px, 16px, 2.5px, 50% 84.4%);  // transform-origin value is (1 - $margin-delta/$height)
     animation: 60s rotating infinite steps(60);
-}
-
-.clock__seconds--color {
-    background-color: rgb(218, 156, 45) !important;
 }
 
 @keyframes slide_right {
