@@ -100,27 +100,19 @@ $footer-links-button-margin: 2px;
     width: calc($footer-links-button-size / 3 * 2);
 }
 
-@mixin clock_hand($width, $height, $margin-delta, $transform-origin) {
+@mixin clock_hand($width, $height, $transform-origin, $animation-duration) {
     position: fixed;
-    margin: calc($footer-links-button-size / 3 - $height + $margin-delta) calc($footer-links-button-size / 3 - $width / 2) 0;
+    margin: calc($footer-links-button-size / 3 - $height) calc($footer-links-button-size / 3 - $width / 2) 0;
     height: $height;
     width: $width;
     transform-origin: $transform-origin;
     background-color: $default-second-color;
+    animation: $animation-duration rotating infinite linear;
 }
 
-.clock__hours {
-    @include clock_hand(1.7px, 14.5px, 0px, 50% 100%);
-    animation: 86400s rotating infinite linear;
-}
-.clock__minutes {
-    @include clock_hand(1.7px, 16.5px, 0px, 50% 100%);
-    animation: 3600s rotating infinite linear;
-}
-.clock__seconds {
-    @include clock_hand(1.7px, 16px, 2.5px, 50% 84.4%);  // transform-origin value is (1 - $margin-delta/$height)
-    animation: 60s rotating infinite steps(60);
-}
+.clock__hours {@include clock_hand(1.7px, 14.5px, 50% 100%, 86400s)}
+.clock__minutes {@include clock_hand(1.7px, 16.5px, 50% 100%, 3600s)}
+
 
 @keyframes slide_right {
     0%   {transform: translateX(-80vw)}

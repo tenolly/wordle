@@ -144,16 +144,6 @@ a {
   animation: 3600s rotating infinite linear;
 }
 
-.clock__seconds {
-  position: fixed;
-  margin: 6.5px 19.15px 0;
-  height: 16px;
-  width: 1.7px;
-  transform-origin: 50% 84.4%;
-  background-color: rgb(190, 132, 43);
-  animation: 60s rotating infinite steps(60);
-}
-
 @keyframes slide_right {
   0% {
     transform: translateX(-80vw);
