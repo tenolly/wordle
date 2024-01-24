@@ -12,7 +12,7 @@ laguages = {
         }  
     },
     "ru": {
-        "dict": open(os.path.join(os.path.dirname(__file__), "ru_dict.txt"), mode="r").read().splitlines(),
+        "dict": open(os.path.join(os.path.dirname(__file__), "ru_dict.txt"), mode="r", encoding="cp1251").read().splitlines(),
         "templates": {
             "PLAY": "ИГРАТЬ"
         },
