@@ -1,0 +1,40 @@
+@import "./keyframes/rotating";
+
+.clock {
+    margin: calc($global--footer_links-button-size / 6 - 3.2px - $global--footer_links-button-margin);
+    height: calc($global--footer_links-button-size / 3 * 2);
+    width: calc($global--footer_links-button-size / 3 * 2);
+    border: 2px solid $global--second-color;
+    border-radius: 50%;
+}
+
+$local--clock_point-size: 2px;
+.clock-point {
+    position: fixed;
+    height: $local--clock_point-size;
+    width: $local--clock_point-size;
+    margin: calc($global--footer_links-button-size / 3 - $local--clock_point-size / 2) calc($global--footer_links-button-size / 3 - $local--clock_point-size / 2);
+    background-color: $global--second-color;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.clock-hand_container {
+    position: fixed;
+    height: calc($global--footer_links-button-size / 3 * 2);
+    width: calc($global--footer_links-button-size / 3 * 2);
+}
+
+@mixin clock_hand_generetor($width, $height, $transform-origin, $animation-duration) {
+    position: fixed;
+    margin: calc($global--footer_links-button-size / 3 - $height) calc($global--footer_links-button-size / 3 - $width / 2) 0;
+    height: $height;
+    width: $width;
+    border-radius: 50%;
+    transform-origin: $transform-origin;
+    background-color: $global--second-color;
+    animation: $animation-duration rotating infinite linear;
+}
+
+.clock-hours_hand { @include clock_hand_generetor(1.86px, 14.5px, 50% 100%, 86400s); }
+.clock-minutes_hand { @include clock_hand_generetor(1.86px, 16.5px, 50% 100%, 3600s); }

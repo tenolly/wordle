@@ -1,0 +1,26 @@
+@import "../common_keyframes/slide_sth_to_left";
+
+$local--slide_menu-duration: calc(($global--animation-basic_duration + 0.5s) * 1.5);
+.menu {
+    display: flex;
+    margin: auto;
+    width: calc($global--big_title-width * 0.94);
+    animation: $local--slide_menu-duration * 0.4 slide_sth_to_left $local--slide_menu-duration * 0.6 backwards;
+}
+
+.menu-button_wrapper {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 0px auto;
+    border: 2px solid $global--second-color;
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        @include global--default_font(24px);
+        letter-spacing: 3px;
+    }
+}

@@ -11,26 +11,26 @@
 </head>
 
 <body>
-    <div class="title-table" id="title-table"></div>
+    <div class="title-container" id="title-container"></div>
     <div class="menu">
-        <a href="/game?lang={{ lang }}" class="menu-wrapper"><button>{{ play }}</button></a>
+        <a href="/game?lang={{ lang }}" class="menu-button_wrapper"><button>{{ play }}</button></a>
     </div>
-    <div class="footer-links">
-        <div class="footer-links__container">
+    <div class="footer_links">
+        <div class="footer_links-container">
             <button>
                 <div class="clock">
-                    <div class="clock__point"></div>
-                    <div class="clock_hand_container" id="clock__hours">
-                        <div class="clock__hours"></div>
+                    <div class="clock-point"></div>
+                    <div class="clock-hand_container" id="clock-hours_hand">
+                        <div class="clock-hours_hand"></div>
                     </div>
-                    <div class="clock_hand_container" id="clock__minutes">
-                        <div class="clock__minutes"></div>
+                    <div class="clock-hand_container" id="clock-minutes_hand">
+                        <div class="clock-minutes_hand"></div>
                     </div>
                 </div>
             </button>
         </div>
-        <a href="/?lang={{ next_lang }}" class="footer-links__container"><button>{{ lang.upper() }}</button></a>
-        <a href="https://github.com/tenolly/wordle" class="footer-links__container">
+        <a href="/?lang={{ next_lang }}" class="footer_links-container"><button>{{ lang.upper() }}</button></a>
+        <a href="https://github.com/tenolly/wordle" class="footer_links-container">
             <img src="{{ url_for( 'static', path='images/github.svg' )}}">
         </a>
     </div>

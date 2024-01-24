@@ -1,0 +1,16 @@
+@import "./keyframes/slide_title_to_top";
+
+.title-container {
+    display: grid;
+    width: fit-content;
+    margin: $global--small_title-margin_top auto $global--small_title-margin_bottom;
+    grid-template-columns: repeat(6, calc($global--small_title-width / 6));
+    animation: calc($global--animation-basic_duration / 2) slide_title_to_top calc($global--animation-basic_duration / 2) backwards;
+    
+    @include global--default_font(37px);
+
+    div {
+        display: block;
+        text-align: center;
+    }
+}

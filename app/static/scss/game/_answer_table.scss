@@ -1,0 +1,27 @@
+@import "../common_keyframes/slide_sth_to_left";
+
+$local--slide_answer_table-duration: calc($global--animation-basic_duration + 0.5s);
+.answer_table {
+    margin: auto;
+    width: fit-content;
+    animation: calc($local--slide_answer_table-duration * 0.25) slide_sth_to_left calc($local--slide_answer_table-duration * 0.75) backwards;
+}
+
+.answer_table-line {
+    display: grid;
+    height: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin);
+    width: 100%;
+    margin: $global--wordle_table-cell_margin auto;
+    grid-template-columns: repeat(5, $global--wordle_table-cell_size);
+}
+
+.answer_table-line-cell {
+    @include global--default_font(37px);
+    overflow: hidden;
+    text-align: center;
+    margin: $global--wordle_table-cell_margin;
+    line-height: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin * 2);
+    height: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin * 2);
+    width: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin * 2);
+    border: 1px solid $global--second-color;
+}

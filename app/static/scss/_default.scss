@@ -1,13 +1,13 @@
-@import "params";
+@import "options";
 
-@mixin default-font($font-size) {
-    color: $default-second-color;
+@mixin global--default_font($font-size) {
+    color: $global--second-color;
     font-size: $font-size;
     font-family: 'Courier New', Courier, monospace;
 }
 
 html, body {
-    background-color: $default-background-color;
+    background-color: $global--first_color;
     overflow: hidden;
     margin: 0;
     padding: 0;

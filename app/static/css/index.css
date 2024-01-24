@@ -13,81 +13,113 @@ a {
   text-decoration: none;
 }
 
-.title-table {
+@keyframes slide_title_to_top {
+  0% {
+    transform: translateY(8vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide_sth_to_right {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.title-container {
   display: grid;
   width: fit-content;
   margin: 40vh auto 0px;
   grid-template-columns: repeat(6, 100px);
-  animation: 2.55s slide_top;
+  animation: 0.8925s slide_title_to_top 1.53s backwards;
   color: rgb(190, 132, 43);
   font-size: 78px;
   font-family: "Courier New", Courier, monospace;
 }
-.title-table .animation1 {
-  animation: 1.2s slide_right;
+.title-container .animation1 {
+  animation: 1.44s slide_sth_to_right 0.5s backwards;
 }
-.title-table .animation2 {
-  animation: 1.3s slide_right;
+.title-container .animation2 {
+  animation: 1.44s slide_sth_to_right 0.4s backwards;
 }
-.title-table .animation3 {
-  animation: 1.4s slide_right;
+.title-container .animation3 {
+  animation: 1.44s slide_sth_to_right 0.3s backwards;
 }
-.title-table .animation4 {
-  animation: 1.5s slide_right;
+.title-container .animation4 {
+  animation: 1.44s slide_sth_to_right 0.2s backwards;
 }
-.title-table .animation5 {
-  animation: 1.6s slide_right;
+.title-container .animation5 {
+  animation: 1.44s slide_sth_to_right 0.1s backwards;
 }
-.title-table .animation6 {
-  animation: 1.7s slide_right;
+.title-container .animation6 {
+  animation: 1.44s slide_sth_to_right 0s backwards;
 }
-.title-table div {
+.title-container div {
   display: block;
   text-align: center;
 }
 
+@keyframes slide_sth_to_left {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .menu {
   display: flex;
   margin: auto;
-  width: 552px;
-  animation: 2.55s slide_left;
+  width: 564px;
+  animation: 1.02s slide_sth_to_left 1.53s backwards;
 }
 
-.menu-wrapper {
+.menu-button_wrapper {
   display: block;
-  height: 45px;
+  height: 40px;
   width: 100%;
   margin: 0px auto;
   border: 2px solid rgb(190, 132, 43);
 }
-.menu-wrapper button {
+.menu-button_wrapper button {
   height: 100%;
   width: 100%;
   background-color: inherit;
   border: none;
   color: rgb(190, 132, 43);
-  font-size: 25px;
+  font-size: 24px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 3px;
 }
 
-.footer-links {
+@keyframes slide_links_to_top {
+  0% {
+    transform: translateY(50vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.footer_links {
   position: absolute;
   bottom: 20px;
   right: 40px;
   display: flex;
   width: fit-content;
-  animation: 3.06s slide_left;
+  animation: 1.2s slide_links_to_top 1.74s backwards;
 }
 
-.footer-links__container {
+.footer_links-container {
   margin: 2px;
   display: block;
   height: 60px;
   width: 60px;
   border: 1px solid rgb(190, 132, 43);
 }
-.footer-links__container button {
+.footer_links-container button {
   height: 100%;
   width: 100%;
   border: none;
@@ -96,11 +128,19 @@ a {
   font-size: 20px;
   font-family: "Courier New", Courier, monospace;
 }
-.footer-links__container img {
+.footer_links-container img {
   height: 100%;
   width: 100%;
 }
 
+@keyframes rotating {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
 .clock {
   margin: 4.8px;
   height: 40px;
@@ -109,7 +149,7 @@ a {
   border-radius: 50%;
 }
 
-.clock__point {
+.clock-point {
   position: fixed;
   height: 2px;
   width: 2px;
@@ -119,13 +159,13 @@ a {
   z-index: 4;
 }
 
-.clock_hand_container {
+.clock-hand_container {
   position: fixed;
   height: 40px;
   width: 40px;
 }
 
-.clock__hours {
+.clock-hours_hand {
   position: fixed;
   margin: 5.5px 19.07px 0;
   height: 14.5px;
@@ -136,7 +176,7 @@ a {
   animation: 86400s rotating infinite linear;
 }
 
-.clock__minutes {
+.clock-minutes_hand {
   position: fixed;
   margin: 3.5px 19.07px 0;
   height: 16.5px;
@@ -145,54 +185,4 @@ a {
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
   animation: 3600s rotating infinite linear;
-}
-
-@keyframes slide_right {
-  0% {
-    transform: translateX(-80vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slide_top {
-  0% {
-    transform: translateY(8vh);
-  }
-  75% {
-    transform: translateY(8vh);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes slide_left {
-  0% {
-    transform: translateX(100vw);
-  }
-  75% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slide_keybord {
-  0% {
-    transform: translateX(-100vw);
-  }
-  75% {
-    transform: translateX(-100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes rotating {
-  0% {
-    transform: rotate(0turn);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
 }

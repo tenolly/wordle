@@ -1,0 +1,4 @@
+@keyframes move_char_in_cell_outside {
+    0%, 100%  { margin-top: 0; }
+    50%  { margin-top: calc(-1 * ($global--wordle_table-cell_size / 2 + $global--wordle_table-cell_margin) + 4px); }
+}

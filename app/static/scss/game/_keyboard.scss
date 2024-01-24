@@ -1,0 +1,34 @@
+@import "../common_keyframes/slide_sth_to_right";
+
+$local--slide_keyboard-duration: calc($global--animation-basic_duration + 0.5s);
+.keyboard {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    animation: calc($local--slide_keyboard-duration * 0.25) slide_sth_to_right calc($local--slide_keyboard-duration * 0.75) backwards;
+}
+
+.keyboard-line {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+
+    button {
+        @include global--default_font(27px);
+        margin: $global--keyboard_cell-margin;
+        height: $global--keyboard_cell-height;
+        width: $global--keyboard_cell-width;
+        border-radius: 5px;
+        border: 1px solid $global--second-color;
+        background-color: $global--first_color;
+    }
+}
+
+.keyboard-line-button--long_text {
+    width: calc($global--keyboard_cell-width * 1.5) !important;
+    font-size: 18px !important;
+}
+
+.backspace-svg {
+    margin: 15px auto;
+}

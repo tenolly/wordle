@@ -1,0 +1,11 @@
+@keyframes slide_title_to_top {
+    0% {
+        font-size: 78px;
+        width: fit-content;
+        transform: translateY(calc($global--big_title-margin_top - $global--small_title-margin_top));
+        grid-template-columns: repeat(6, calc($global--big_title-width / 6));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

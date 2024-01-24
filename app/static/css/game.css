@@ -13,21 +13,40 @@ a {
   text-decoration: none;
 }
 
-.title-table {
+@keyframes slide_title_to_top {
+  0% {
+    font-size: 78px;
+    width: fit-content;
+    transform: translateY(calc(40vh - 13px));
+    grid-template-columns: repeat(6, 100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.title-container {
   display: grid;
   width: fit-content;
   margin: 13px auto 3px;
   grid-template-columns: repeat(6, 34.6666666667px);
-  animation: 1.2s slide_top;
+  animation: 0.6s slide_title_to_top 0.6s backwards;
   color: rgb(190, 132, 43);
   font-size: 37px;
   font-family: "Courier New", Courier, monospace;
 }
-.title-table div {
+.title-container div {
   display: block;
   text-align: center;
 }
 
+@keyframes slide_menu_to_bottom {
+  0% {
+    transform: translateY(calc(-160vh + 0px + 88px));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .menu {
   position: absolute;
   display: flex;
@@ -39,11 +58,11 @@ a {
 
 .menu-wrapper {
   display: block;
-  height: 45px;
+  height: 40px;
   width: 100%;
   margin: 0 auto;
   border: 1px solid rgb(190, 132, 43);
-  animation: 1.2s slide_bottom;
+  animation: 0.6s slide_menu_to_bottom 0.6s backwards;
 }
 .menu-wrapper button {
   height: 100%;
@@ -51,18 +70,26 @@ a {
   background-color: inherit;
   border: none;
   color: rgb(190, 132, 43);
-  font-size: 25px;
+  font-size: 24px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 3px;
 }
 
-.answer-table {
+@keyframes slide_sth_to_left {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.answer_table {
   margin: auto;
   width: fit-content;
-  animation: 1.7s slide_left;
+  animation: 0.425s slide_sth_to_left 1.275s backwards;
 }
 
-.answer-table-line {
+.answer_table-line {
   display: grid;
   height: 60.75px;
   width: 100%;
@@ -70,7 +97,7 @@ a {
   grid-template-columns: repeat(5, 65px);
 }
 
-.answer-table-line__cell {
+.answer_table-line-cell {
   color: rgb(190, 132, 43);
   font-size: 37px;
   font-family: "Courier New", Courier, monospace;
@@ -83,23 +110,27 @@ a {
   border: 1px solid rgb(190, 132, 43);
 }
 
-.trembling-animation {
-  animation: trembling 0.3s;
+@keyframes slide_sth_to_right {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-
-.keybord {
+.keyboard {
   display: block;
   width: fit-content;
   margin: 20px auto;
-  animation: 1.7s slide_keybord;
+  animation: 0.425s slide_sth_to_right 1.275s backwards;
 }
 
-.keybord__line {
+.keyboard-line {
   display: flex;
   margin: 0 auto;
   width: fit-content;
 }
-.keybord__line button {
+.keyboard-line button {
   color: rgb(190, 132, 43);
   font-size: 27px;
   font-family: "Courier New", Courier, monospace;
@@ -111,7 +142,7 @@ a {
   background-color: rgb(38, 39, 47);
 }
 
-.keybord__line-button--long-text {
+.keyboard-line-button--long_text {
   width: 78px !important;
   font-size: 18px !important;
 }
@@ -120,43 +151,23 @@ a {
   margin: 15px auto;
 }
 
-.cell--state-n--color {
-  background-color: rgb(35, 34, 34) !important;
+@keyframes slide_sth_to_left {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-
-.cell--state-g--color {
-  background-color: rgb(17, 106, 14) !important;
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
-
-.cell--state-y--color {
-  background-color: rgb(95, 94, 9) !important;
-}
-
-.cell--state-n--animation {
-  animation: 1s flip;
-  background-color: rgb(35, 34, 34);
-}
-.cell--state-n--animation div {
-  animation: 1s move_outside;
-}
-
-.cell--state-g--animation {
-  animation: 1s flip;
-  background-color: rgb(17, 106, 14);
-}
-.cell--state-g--animation div {
-  animation: 1s move_outside;
-}
-
-.cell--state-y--animation {
-  animation: 1s flip;
-  background-color: rgb(95, 94, 9);
-}
-.cell--state-y--animation div {
-  animation: 1s move_outside;
-}
-
-.result-modal-window {
+.result_modal_window {
   position: absolute;
   opacity: 1 !important;
   height: 550px;
@@ -167,7 +178,7 @@ a {
   border: 3px solid rgb(190, 132, 43);
 }
 
-.result-modal-window__title {
+.result_modal_window-title {
   color: rgb(190, 132, 43);
   font-size: 38px;
   font-family: "Courier New", Courier, monospace;
@@ -176,14 +187,14 @@ a {
   text-align: center;
 }
 
-.result-table-line {
+.result_table-line {
   display: grid;
   width: fit-content;
   margin: auto;
   grid-template-columns: repeat(5, 1fr);
 }
 
-.result-table-line__cell {
+.result_table-line-cell {
   margin: 3px;
   height: 63.2913385827px;
   width: 63.2913385827px;
@@ -191,27 +202,24 @@ a {
 }
 
 .slide_left--animation {
-  animation: 1.9s slide_left;
+  animation: 1.7s slide_sth_to_left 0.95s backwards;
 }
 
 .disappearance--animation {
   opacity: 0.3;
-  animation: 1.9s disappearance;
+  animation: 1.9s disappearance 0.95s backwards;
 }
 
-@keyframes disappearance {
-  0% {
-    opacity: 1;
+@keyframes move_char_in_cell_outside {
+  0%, 100% {
+    margin-top: 0;
   }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.3;
+  50% {
+    margin-top: -32.75px;
   }
 }
 @keyframes trembling {
-  0% {
+  0%, 100% {
     transform: translateX(0);
   }
   33% {
@@ -220,61 +228,173 @@ a {
   66% {
     transform: translateX(-7px);
   }
-  100% {
-    transform: translateX(0);
-  }
 }
-@keyframes slide_top {
-  0% {
-    font-size: 78px;
-    width: fit-content;
-    transform: translateY(calc(40vh - 13px));
-    grid-template-columns: repeat(6, 100px);
-  }
-  50% {
-    font-size: 78px;
-    width: fit-content;
-    transform: translateY(calc(40vh - 13px));
-    grid-template-columns: repeat(6, 100px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.cell--state-n--animation-1 {
+  animation: 1s flip--n-color 0.15s forwards;
 }
-@keyframes slide_bottom {
-  0% {
-    transform: translateY(calc(-160vh + 0px + 88px));
-  }
-  40% {
-    transform: translateY(calc(-160vh + 0px + 88px));
-  }
-  100% {
-    transform: translateY(0);
-  }
+.cell--state-n--animation-1 div {
+  animation: 1s move_char_in_cell_outside 0.15s;
 }
-@keyframes slide_left {
-  0% {
-    transform: translateX(100vw);
-  }
-  75% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
+
+.cell--state-n--color-1 {
+  animation: 1s change_color--n-color 0.15s forwards;
 }
-@keyframes slide_keybord {
-  0% {
-    transform: translateX(-100vw);
-  }
-  75% {
-    transform: translateX(-100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
+
+.cell--state-g--animation-1 {
+  animation: 1s flip--g-color 0.15s forwards;
 }
-@keyframes flip {
+.cell--state-g--animation-1 div {
+  animation: 1s move_char_in_cell_outside 0.15s;
+}
+
+.cell--state-g--color-1 {
+  animation: 1s change_color--g-color 0.15s forwards;
+}
+
+.cell--state-y--animation-1 {
+  animation: 1s flip--y-color 0.15s forwards;
+}
+.cell--state-y--animation-1 div {
+  animation: 1s move_char_in_cell_outside 0.15s;
+}
+
+.cell--state-y--color-1 {
+  animation: 1s change_color--y-color 0.15s forwards;
+}
+
+.cell--state-n--animation-2 {
+  animation: 1s flip--n-color 0.3s forwards;
+}
+.cell--state-n--animation-2 div {
+  animation: 1s move_char_in_cell_outside 0.3s;
+}
+
+.cell--state-n--color-2 {
+  animation: 1s change_color--n-color 0.3s forwards;
+}
+
+.cell--state-g--animation-2 {
+  animation: 1s flip--g-color 0.3s forwards;
+}
+.cell--state-g--animation-2 div {
+  animation: 1s move_char_in_cell_outside 0.3s;
+}
+
+.cell--state-g--color-2 {
+  animation: 1s change_color--g-color 0.3s forwards;
+}
+
+.cell--state-y--animation-2 {
+  animation: 1s flip--y-color 0.3s forwards;
+}
+.cell--state-y--animation-2 div {
+  animation: 1s move_char_in_cell_outside 0.3s;
+}
+
+.cell--state-y--color-2 {
+  animation: 1s change_color--y-color 0.3s forwards;
+}
+
+.cell--state-n--animation-3 {
+  animation: 1s flip--n-color 0.45s forwards;
+}
+.cell--state-n--animation-3 div {
+  animation: 1s move_char_in_cell_outside 0.45s;
+}
+
+.cell--state-n--color-3 {
+  animation: 1s change_color--n-color 0.45s forwards;
+}
+
+.cell--state-g--animation-3 {
+  animation: 1s flip--g-color 0.45s forwards;
+}
+.cell--state-g--animation-3 div {
+  animation: 1s move_char_in_cell_outside 0.45s;
+}
+
+.cell--state-g--color-3 {
+  animation: 1s change_color--g-color 0.45s forwards;
+}
+
+.cell--state-y--animation-3 {
+  animation: 1s flip--y-color 0.45s forwards;
+}
+.cell--state-y--animation-3 div {
+  animation: 1s move_char_in_cell_outside 0.45s;
+}
+
+.cell--state-y--color-3 {
+  animation: 1s change_color--y-color 0.45s forwards;
+}
+
+.cell--state-n--animation-4 {
+  animation: 1s flip--n-color 0.6s forwards;
+}
+.cell--state-n--animation-4 div {
+  animation: 1s move_char_in_cell_outside 0.6s;
+}
+
+.cell--state-n--color-4 {
+  animation: 1s change_color--n-color 0.6s forwards;
+}
+
+.cell--state-g--animation-4 {
+  animation: 1s flip--g-color 0.6s forwards;
+}
+.cell--state-g--animation-4 div {
+  animation: 1s move_char_in_cell_outside 0.6s;
+}
+
+.cell--state-g--color-4 {
+  animation: 1s change_color--g-color 0.6s forwards;
+}
+
+.cell--state-y--animation-4 {
+  animation: 1s flip--y-color 0.6s forwards;
+}
+.cell--state-y--animation-4 div {
+  animation: 1s move_char_in_cell_outside 0.6s;
+}
+
+.cell--state-y--color-4 {
+  animation: 1s change_color--y-color 0.6s forwards;
+}
+
+.cell--state-n--animation-5 {
+  animation: 1s flip--n-color 0.75s forwards;
+}
+.cell--state-n--animation-5 div {
+  animation: 1s move_char_in_cell_outside 0.75s;
+}
+
+.cell--state-n--color-5 {
+  animation: 1s change_color--n-color 0.75s forwards;
+}
+
+.cell--state-g--animation-5 {
+  animation: 1s flip--g-color 0.75s forwards;
+}
+.cell--state-g--animation-5 div {
+  animation: 1s move_char_in_cell_outside 0.75s;
+}
+
+.cell--state-g--color-5 {
+  animation: 1s change_color--g-color 0.75s forwards;
+}
+
+.cell--state-y--animation-5 {
+  animation: 1s flip--y-color 0.75s forwards;
+}
+.cell--state-y--animation-5 div {
+  animation: 1s move_char_in_cell_outside 0.75s;
+}
+
+.cell--state-y--color-5 {
+  animation: 1s change_color--y-color 0.75s forwards;
+}
+
+@keyframes flip--n-color {
   0% {
     background-color: rgb(38, 39, 47);
     height: 56.5px;
@@ -286,16 +406,63 @@ a {
   }
   100% {
     height: 56.5px;
+    background-color: rgb(35, 34, 34);
   }
 }
-@keyframes move_outside {
+@keyframes change_color--n-color {
   0% {
-    margin-top: 0;
-  }
-  50% {
-    margin-top: -36.75px;
+    background-color: rgb(38, 39, 47);
   }
   100% {
-    margin-top: 0;
+    background-color: rgb(35, 34, 34);
   }
+}
+@keyframes flip--g-color {
+  0% {
+    background-color: rgb(38, 39, 47);
+    height: 56.5px;
+  }
+  50% {
+    background-color: rgb(38, 39, 47);
+    height: 0;
+    margin-top: 36.75px;
+  }
+  100% {
+    height: 56.5px;
+    background-color: rgb(17, 106, 14);
+  }
+}
+@keyframes change_color--g-color {
+  0% {
+    background-color: rgb(38, 39, 47);
+  }
+  100% {
+    background-color: rgb(17, 106, 14);
+  }
+}
+@keyframes flip--y-color {
+  0% {
+    background-color: rgb(38, 39, 47);
+    height: 56.5px;
+  }
+  50% {
+    background-color: rgb(38, 39, 47);
+    height: 0;
+    margin-top: 36.75px;
+  }
+  100% {
+    height: 56.5px;
+    background-color: rgb(95, 94, 9);
+  }
+}
+@keyframes change_color--y-color {
+  0% {
+    background-color: rgb(38, 39, 47);
+  }
+  100% {
+    background-color: rgb(95, 94, 9);
+  }
+}
+.trembling--animation {
+  animation: trembling 0.3s;
 }

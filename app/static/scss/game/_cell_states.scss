@@ -1,0 +1,57 @@
+@import "./keyframes/move_char_in_cell_outside";
+@import "./keyframes/trembling";
+
+@mixin flip_animation($flip_animation-name, $delay) {
+    animation: $global--flip_animation-duration $flip_animation-name $delay forwards;
+
+    div {
+        animation: $global--flip_animation-duration move_char_in_cell_outside $delay;
+    }
+}
+
+@mixin change_color_animation($change_color-name, $delay) {
+    animation: $global--flip_animation-duration $change_color-name $delay forwards;
+}
+
+@for $i from 1 through 5 {
+    $colors: "n", "g", "y";
+    @for $j from 1 through 3 {
+        .cell--state-#{nth($colors, $j)}--animation-#{$i} {
+            @include flip_animation(flip--#{nth($colors, $j)}-color, 0.15s * $i);
+        }
+        .cell--state-#{nth($colors, $j)}--color-#{$i} {
+            @include change_color_animation(change_color--#{nth($colors, $j)}-color, 0.15s * $i);
+        }
+    }
+}
+
+@mixin cell_states-animation_generator($color) {
+    @keyframes flip--#{$color}-color {
+        0% {
+            background-color: $global--first-color;
+            height: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin * 2);
+        }
+        50% {
+            background-color: $global--first-color;
+            height: 0;
+            margin-top: calc($global--wordle_table-cell_size / 2 + $global--wordle_table-cell_margin);
+        }
+        100% {
+            height: calc($global--wordle_table-cell_size - $global--wordle_table-cell_margin * 2);
+            @content;
+        }
+    }
+
+    @keyframes change_color--#{$color}-color {
+        0% { background-color: $global--first_color; }
+        100% { @content; }
+    }
+}
+
+@include cell_states-animation_generator(n) { background-color: $global--cell_state-grey_color; }
+@include cell_states-animation_generator(g) { background-color: $global--cell_state-green_color; } 
+@include cell_states-animation_generator(y) { background-color: $global--cell_state-yellow_color; }
+
+.trembling--animation {
+    animation: trembling 0.3s;
+}

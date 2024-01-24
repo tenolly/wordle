@@ -1,0 +1,28 @@
+@import "./keyframes/slide_menu_to_bottom";
+
+.menu {
+    position: absolute;
+    display: flex;
+    margin: auto;
+    width: calc($global--big_title-width * 0.92);
+    left: calc((100vw - $global--big_title-width * 0.92) / 2);
+    top: 200vh;
+}
+
+.menu-wrapper {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid $global--second-color;
+    animation: calc($global--animation-basic_duration / 2) slide_menu_to_bottom calc($global--animation-basic_duration / 2) backwards;
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        @include global--default_font(24px);
+        letter-spacing: 3px;
+    }
+}

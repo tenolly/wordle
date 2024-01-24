@@ -1,0 +1,43 @@
+@import "../common_keyframes/slide_sth_to_left";
+@import "./keyframes/disappearance";
+
+.result_modal_window {
+    position: absolute;
+    opacity: 1 !important;
+    height: $global--result_modal_window-height;
+    width: $global--result_modal_window-width;
+    top: calc((100vh - $global--result_modal_window-height) / 2);
+    left: calc((100vw -  $global--result_modal_window-width) / 2);
+    background-color: $global--first_color;
+    border: 3px solid $global--second-color;
+}
+
+.result_modal_window-title {
+    @include global--default_font(38px);
+    margin: $global--result_modal_window-height * 0.04 auto calc($global--result_modal_window-height * 0.04 - $global--result_modal_window-table-margin);
+    width: $global--result_modal_window-width;
+    text-align: center;
+}
+
+.result_table-line {
+    display: grid;
+    width: fit-content;
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.result_table-line-cell {
+    margin: $global--result_modal_window-table-margin;
+    height: calc($global--result_modal_window-height * 0.8 / 6.35 - $global--result_modal_window-table-margin * 2);
+    width: calc($global--result_modal_window-height * 0.8 / 6.35  - $global--result_modal_window-table-margin * 2);
+    border: 2px solid $global--second-color;
+}
+
+.slide_left--animation {
+    animation: calc($global--flip_animation-duration + 0.7s) slide_sth_to_left calc(($global--flip_animation-duration + 0.9s) / 2) backwards;
+}
+
+.disappearance--animation {
+    opacity: 0.3;
+    animation: calc($global--flip_animation-duration + 0.9s) disappearance calc(($global--flip_animation-duration + 0.9s) / 2) backwards;
+}

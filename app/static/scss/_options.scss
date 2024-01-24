@@ -1,0 +1,31 @@
+$global--first_color: rgb(38, 39, 47);
+$global--second_color: rgb(190, 132, 43);  // don't forget change this value in images/*.svg
+
+$global--cell_state-grey_color: rgb(35, 34, 34);
+$global--cell_state-green_color: rgb(17, 106, 14);
+$global--cell_state-yellow_color: rgb(95, 94, 9);
+
+$global--big_title-width: 600px;
+$global--big_title-margin_top: 40vh;
+$global--big_title-margin_bottom: 0px;
+
+$global--small_title-width: 208px;
+$global--small_title-margin_top: 13px;
+$global--small_title-margin_bottom: 3px;
+
+$global--footer_links-button-size: 60px;
+$global--footer_links-button-margin: 2px;
+
+$global--animation-basic_duration: 1.2s;
+$global--flip_animation-duration: 1s;
+
+$global--wordle_table-cell_size: 65px;
+$global--wordle_table-cell_margin: 4.25px;
+
+$global--keyboard_cell-height: 58px;
+$global--keyboard_cell-width: 52px;
+$global--keyboard_cell-margin: 3px;
+
+$global--result_modal_window-height: 550px;
+$global--result_modal_window-width: 450px;
+$global--result_modal_window-table-margin: 3px;

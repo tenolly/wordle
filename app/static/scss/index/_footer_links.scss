@@ -1,0 +1,31 @@
+@import "./keyframes/slide_links_to_top";
+
+.footer_links {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    width: fit-content;
+    animation: $global--animation-basic_duration slide_links_to_top $global--animation-basic_duration * 1.45 backwards;
+}
+
+.footer_links-container {
+    margin: $global--footer_links-button-margin;
+    display: block;
+    height: $global--footer_links-button-size;
+    width: $global--footer_links-button-size;
+    border: 1px solid $global--second-color;
+
+    button {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background-color: inherit;
+        @include global--default_font(20px);
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
