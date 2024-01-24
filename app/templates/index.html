@@ -6,6 +6,7 @@
     <title>Wordle</title>
     <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', path='images/favicon.ico' ) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', path='css/index.css' )}}">
+    <script src="{{ url_for( 'static', path='js/cookie.js' )}}"></script>
     <script defer src="{{ url_for( 'static', path='js/load_index_html.js' )}}"></script>
     <script defer src="{{ url_for( 'static', path='js/init_clocks.js' )}}"></script>
 </head>
@@ -13,7 +14,7 @@
 <body>
     <div class="title-container" id="title-container"></div>
     <div class="menu">
-        <a href="/game?lang={{ lang }}" class="menu-button_wrapper"><button>{{ play }}</button></a>
+        <a href="/game" class="menu-button_wrapper"><button>{{ play }}</button></a>
     </div>
     <div class="footer_links">
         <div class="footer_links-container">
@@ -29,7 +30,9 @@
                 </div>
             </button>
         </div>
-        <a href="/?lang={{ next_lang }}" class="footer_links-container"><button>{{ lang.upper() }}</button></a>
+        <a href="/" class="footer_links-container">
+            <button onclick="setCookie('lang', '{{ next_lang }}', {'max-age': 31536000})">{{ lang.upper() }}</button>
+        </a>
         <a href="https://github.com/tenolly/wordle" class="footer_links-container">
             <img src="{{ url_for( 'static', path='images/github.svg' )}}">
         </a>

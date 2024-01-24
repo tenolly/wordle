@@ -1,7 +1,7 @@
 import os
 import datetime
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Cookie
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -18,7 +18,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request, lang: str = "en"):
+async def index(request: Request, lang: str = Cookie(default="en")):
     available_laguages = list(laguages.keys())
     context = {
         "lang": lang,
@@ -29,7 +29,7 @@ async def index(request: Request, lang: str = "en"):
 
 
 @app.get("/game", response_class=HTMLResponse)
-async def game(request: Request, lang: str = "en"):
+async def game(request: Request, lang: str = Cookie(default="en")):
     context = {
         "lang": lang,
         "play": laguages[lang]["templates"]["PLAY"]
