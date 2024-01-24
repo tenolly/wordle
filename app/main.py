@@ -20,6 +20,9 @@ templates = Jinja2Templates(directory="app/templates")
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request, lang: str = Cookie(default="en")):
     available_laguages = list(laguages.keys())
+    if lang not in available_laguages:
+        lang = "en"
+
     context = {
         "lang": lang,
         "next_lang": available_laguages[(available_laguages.index(lang) + 1) % len(available_laguages)],
@@ -30,6 +33,10 @@ async def index(request: Request, lang: str = Cookie(default="en")):
 
 @app.get("/game", response_class=HTMLResponse)
 async def game(request: Request, lang: str = Cookie(default="en")):
+    available_laguages = list(laguages.keys())
+    if lang not in available_laguages:
+        lang = "en"
+
     context = {
         "lang": lang,
         "play": laguages[lang]["templates"]["PLAY"]
