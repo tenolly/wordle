@@ -45,7 +45,7 @@ async def game(request: Request, lang: str = Cookie(default="en")):
 
 
 @app.post("/check_word", response_class=JSONResponse)
-async def check_word(request: Request):
+async def check_word(request: Request, randint: int = Cookie(default=0)):
     json_responce = await request.json()
     word, lang = json_responce["word"].lower(), json_responce["lang"].lower()
 
@@ -57,7 +57,7 @@ async def check_word(request: Request):
     response["success"] = response["word"] in laguages[lang]["dict"]
     if response["success"]:
         response["result"] = check_positions(get_daily_word(
-            laguages[lang]["dict"]), response["word"])
+            laguages[lang]["dict"], randint), response["word"])
 
     return JSONResponse(response)
 

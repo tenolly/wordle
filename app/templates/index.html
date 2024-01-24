@@ -14,24 +14,28 @@
 <body>
     <div class="title-container" id="title-container"></div>
     <div class="menu">
-        <a href="/game" class="menu-button_wrapper"><button>{{ play }}</button></a>
+        <a href="/game" class="menu-button-wrapper"><button>{{ play }}</button></a>
     </div>
     <div class="footer_links">
         <div class="footer_links-container">
-            <button>
-                <div class="clock">
-                    <div class="clock-point"></div>
-                    <div class="clock-hand_container" id="clock-hours_hand">
-                        <div class="clock-hours_hand"></div>
+            <button onclick="overloadClocks();setCookie('randint', Math.floor(Math.random() * 10000), {'max-age': 31536000})">
+                <div class="footer_links-text" id="new_word" hidden>
+                    NEW
+                    WORD
+                </div>
+                <div class="clock" id="clock">
+                    <div class="clock-point" id="clock-point"></div>
+                    <div class="clock-hand-wrapper" id="clock-hours_hand-wrapper">
+                        <div class="clock-hours_hand" id="clock-hours_hand"></div>
                     </div>
-                    <div class="clock-hand_container" id="clock-minutes_hand">
-                        <div class="clock-minutes_hand"></div>
+                    <div class="clock-hand-wrapper" id="clock-minutes_hand-wrapper">
+                        <div class="clock-minutes_hand" id="clock-hours_hand"></div>
                     </div>
                 </div>
             </button>
         </div>
         <a href="/" class="footer_links-container">
-            <button onclick="setCookie('lang', '{{ next_lang }}', {'max-age': 31536000})">{{ lang.upper() }}</button>
+            <button onclick="setCookie('lang', '{{ next_lang }}', {'max-age': 7200})">{{ lang.upper() }}</button>
         </a>
         <a href="https://github.com/tenolly/wordle" class="footer_links-container">
             <img src="{{ url_for( 'static', path='images/github.svg' )}}">

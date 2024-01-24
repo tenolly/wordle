@@ -1,0 +1,7 @@
+@keyframes overload_clock_minute_hand {
+    0%   { transform: rotate(0turn); }
+    20%  { transform: rotate(2.4turn); }
+    40%  { transform: rotate(14.4turn); }
+    60%  { transform: rotate(33.6turn); }
+    100% { transform: rotate(72turn) translate(-120vw, -100vh); }
+}

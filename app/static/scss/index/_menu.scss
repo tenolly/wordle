@@ -8,7 +8,7 @@ $local--slide_menu-duration: calc(($global--animation-basic_duration + 0.5s) * 1
     animation: $local--slide_menu-duration * 0.4 slide_sth_to_left $local--slide_menu-duration * 0.6 backwards;
 }
 
-.menu-button_wrapper {
+.menu-button-wrapper {
     display: block;
     height: 40px;
     width: 100%;

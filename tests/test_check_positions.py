@@ -9,7 +9,7 @@ tests = [
     (("CATH", "CATA"), ["G", "G", "G", "N"]),
     (("AAAU", "AAAA"), ["G", "G", "G", "N"]),
     (("AUAU", "AAAA"), ["G", "N", "G", "N"]),
-    (("TAHP", "AHAP"), ["Y", "Y", "Y", "G"]),
+    (("TAHP", "AHAP"), ["Y", "Y", "N", "G"])
 ]
 
 

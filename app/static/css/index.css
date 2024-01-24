@@ -77,14 +77,14 @@ a {
   animation: 1.02s slide_sth_to_left 1.53s backwards;
 }
 
-.menu-button_wrapper {
+.menu-button-wrapper {
   display: block;
   height: 40px;
   width: 100%;
   margin: 0px auto;
   border: 2px solid rgb(190, 132, 43);
 }
-.menu-button_wrapper button {
+.menu-button-wrapper button {
   height: 100%;
   width: 100%;
   background-color: inherit;
@@ -133,12 +133,196 @@ a {
   width: 100%;
 }
 
+.footer_links-text {
+  position: fixed;
+  color: rgb(190, 132, 43);
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 18px;
+  width: 54px;
+  margin-top: 8px;
+}
+
 @keyframes rotating {
   0% {
     transform: rotate(0turn);
   }
   100% {
     transform: rotate(1turn);
+  }
+}
+@keyframes overload_clock_hour_hand {
+  0% {
+    transform: rotate(0turn);
+  }
+  20% {
+    transform: rotate(0.4turn);
+  }
+  40% {
+    transform: rotate(1.2turn);
+  }
+  60% {
+    transform: rotate(2.8turn);
+  }
+  100% {
+    transform: rotate(6turn) translate(-100vw, -70vh);
+  }
+}
+@keyframes overload_clock_minute_hand {
+  0% {
+    transform: rotate(0turn);
+  }
+  20% {
+    transform: rotate(2.4turn);
+  }
+  40% {
+    transform: rotate(14.4turn);
+  }
+  60% {
+    transform: rotate(33.6turn);
+  }
+  100% {
+    transform: rotate(72turn) translate(-120vw, -100vh);
+  }
+}
+@keyframes overload_clock_point {
+  0%, 60% {
+    transform: translate(0, 0);
+    height: 1.3px;
+    width: 1.3px;
+  }
+  62.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(12.0208152802px, -11.0208152802px);
+  }
+  65% {
+    height: 3px;
+    width: 3px;
+    transform: translate(24.0416305603px, -20.0416305603px);
+  }
+  67.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(36.0624458405px, -27.0624458405px);
+  }
+  70% {
+    height: 3px;
+    width: 3px;
+    transform: translate(48.0832611207px, -32.0832611207px);
+  }
+  72.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(60.1040764009px, -35.1040764009px);
+  }
+  75% {
+    height: 3px;
+    width: 3px;
+    transform: translate(72.124891681px, -36.124891681px);
+  }
+  77.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(84.1457069612px, -35.1457069612px);
+  }
+  80% {
+    height: 3px;
+    width: 3px;
+    transform: translate(96.1665222414px, -32.1665222414px);
+  }
+  82.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(108.1873375215px, -27.1873375215px);
+  }
+  85% {
+    height: 3px;
+    width: 3px;
+    transform: translate(120.2081528017px, -20.2081528017px);
+  }
+  87.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(132.2289680819px, -11.2289680819px);
+  }
+  90% {
+    height: 3px;
+    width: 3px;
+    transform: translate(144.2497833621px, -0.2497833621px);
+  }
+  92.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(156.2705986422px, 12.7294013578px);
+  }
+  95% {
+    height: 3px;
+    width: 3px;
+    transform: translate(168.2914139224px, 27.7085860776px);
+  }
+  97.5% {
+    height: 3px;
+    width: 3px;
+    transform: translate(180.3122292026px, 44.6877707974px);
+  }
+  100% {
+    height: 3px;
+    width: 3px;
+    transform: translate(192.3330444827px, 63.6669555173px);
+  }
+}
+@keyframes overload_clock {
+  0%, 60% {
+    transform: translate(0, 0);
+  }
+  62.5% {
+    transform: translate(-7.0710678119px, -6.0710678119px);
+  }
+  65% {
+    transform: translate(-14.1421356237px, -10.1421356237px);
+  }
+  67.5% {
+    transform: translate(-21.2132034356px, -12.2132034356px);
+  }
+  70% {
+    transform: translate(-28.2842712475px, -12.2842712475px);
+  }
+  72.5% {
+    transform: translate(-35.3553390593px, -10.3553390593px);
+  }
+  75% {
+    transform: translate(-42.4264068712px, -6.4264068712px);
+  }
+  77.5% {
+    transform: translate(-49.4974746831px, -0.4974746831px);
+  }
+  80% {
+    transform: translate(-56.5685424949px, 7.4314575051px);
+  }
+  82.5% {
+    transform: translate(-63.6396103068px, 17.3603896932px);
+  }
+  85% {
+    transform: translate(-70.7106781187px, 29.2893218813px);
+  }
+  87.5% {
+    transform: translate(-77.7817459305px, 43.2182540695px);
+  }
+  90% {
+    transform: translate(-84.8528137424px, 59.1471862576px);
+  }
+  92.5% {
+    transform: translate(-91.9238815543px, 77.0761184457px);
+  }
+  95% {
+    transform: translate(-98.9949493661px, 97.0050506339px);
+  }
+  97.5% {
+    transform: translate(-106.066017178px, 118.933982822px);
+  }
+  100% {
+    transform: translate(-113.1370849898px, 142.8629150102px);
   }
 }
 .clock {
@@ -151,15 +335,15 @@ a {
 
 .clock-point {
   position: fixed;
-  height: 2px;
-  width: 2px;
-  margin: 19px 19px;
+  height: 1.3px;
+  width: 1.3px;
+  margin: 19.35px 19.35px;
   background-color: rgb(190, 132, 43);
   border-radius: 50%;
   z-index: 4;
 }
 
-.clock-hand_container {
+.clock-hand-wrapper {
   position: fixed;
   height: 40px;
   width: 40px;
@@ -167,22 +351,38 @@ a {
 
 .clock-hours_hand {
   position: fixed;
-  margin: 5.5px 19.07px 0;
-  height: 14.5px;
-  width: 1.86px;
-  border-radius: 50%;
+  margin: 7px 19.05px 0;
+  height: 13px;
+  width: 1.9px;
+  border-radius: 50% 50% 30% 30%;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
-  animation: 86400s rotating infinite linear;
+  animation: 43200s rotating infinite linear forwards;
 }
 
 .clock-minutes_hand {
   position: fixed;
-  margin: 3.5px 19.07px 0;
-  height: 16.5px;
-  width: 1.86px;
-  border-radius: 50%;
+  margin: 3px 19.05px 0;
+  height: 17px;
+  width: 1.9px;
+  border-radius: 50% 50% 30% 30%;
   transform-origin: 50% 100%;
   background-color: rgb(190, 132, 43);
-  animation: 3600s rotating infinite linear;
+  animation: 3600s rotating infinite linear forwards;
+}
+
+.clock-hours_hand--overloaded {
+  animation: 4s overload_clock_hour_hand linear forwards;
+}
+
+.clock-minutes_hand--overloaded {
+  animation: 4s overload_clock_minute_hand linear forwards;
+}
+
+.clock-point--overloaded {
+  animation: 4s overload_clock_point alternate forwards;
+}
+
+.clock--overloaded {
+  animation: 4s overload_clock alternate forwards;
 }

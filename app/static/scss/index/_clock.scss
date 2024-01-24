@@ -1,4 +1,8 @@
 @import "./keyframes/rotating";
+@import "./keyframes/overload_clock_hour_hand";
+@import "./keyframes/overload_clock_minute_hand";
+@import "./keyframes/overload_clock_point";
+@import "./keyframes/overload_clock";
 
 .clock {
     margin: calc($global--footer_links-button-size / 6 - 3.2px - $global--footer_links-button-margin);
@@ -8,7 +12,7 @@
     border-radius: 50%;
 }
 
-$local--clock_point-size: 2px;
+$local--clock_point-size: 1.3px;
 .clock-point {
     position: fixed;
     height: $local--clock_point-size;
@@ -19,7 +23,7 @@ $local--clock_point-size: 2px;
     z-index: 4;
 }
 
-.clock-hand_container {
+.clock-hand-wrapper {
     position: fixed;
     height: calc($global--footer_links-button-size / 3 * 2);
     width: calc($global--footer_links-button-size / 3 * 2);
@@ -30,11 +34,16 @@ $local--clock_point-size: 2px;
     margin: calc($global--footer_links-button-size / 3 - $height) calc($global--footer_links-button-size / 3 - $width / 2) 0;
     height: $height;
     width: $width;
-    border-radius: 50%;
+    border-radius: 50% 50% 30% 30%;
     transform-origin: $transform-origin;
     background-color: $global--second-color;
-    animation: $animation-duration rotating infinite linear;
+    animation: $animation-duration rotating infinite linear forwards;
 }
 
-.clock-hours_hand { @include clock_hand_generetor(1.86px, 14.5px, 50% 100%, 86400s); }
-.clock-minutes_hand { @include clock_hand_generetor(1.86px, 16.5px, 50% 100%, 3600s); }
+.clock-hours_hand { @include clock_hand_generetor(1.9px, 13px, 50% 100%, 43200s); }
+.clock-minutes_hand { @include clock_hand_generetor(1.9px, 17px, 50% 100%, 3600s); }
+
+.clock-hours_hand--overloaded { animation: 4s overload_clock_hour_hand linear forwards; }
+.clock-minutes_hand--overloaded { animation: 4s overload_clock_minute_hand linear forwards; }
+.clock-point--overloaded { animation: 4s overload_clock_point alternate forwards; }
+.clock--overloaded { animation: 4s overload_clock alternate forwards; }

@@ -1,0 +1,17 @@
+@keyframes overload_clock_point {
+    0%, 60% { 
+        transform: translate(0, 0); 
+        height: 1.3px;
+        width: 1.3px;
+    }
+    @for $i from 1 through 16 {
+        #{60% + calc(40% / 16) * $i} {
+            height: 3px;
+            width: 3px;
+            transform: translate(
+                170px * 0.1 * $i * cos(45deg), 
+                -170px * 0.1 * $i * sin(45deg) + calc(200px * (0.1 * $i) * (0.1 * $i) / 2))
+            ;
+        }
+    };
+}

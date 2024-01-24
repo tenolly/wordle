@@ -29,3 +29,11 @@
         width: 100%;
     }
 }
+
+.footer_links-text {
+    position: fixed;
+    @include global--default_font(16px);
+    line-height: 18px;
+    width: calc($global--footer_links-button-size - 6px);
+    margin-top: 8px;
+}
