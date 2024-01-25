@@ -14,14 +14,13 @@
 <body>
     <div class="title-container" id="title-container"></div>
     <div class="menu">
-        <a href="/game" class="menu-button-wrapper"><button>{{ play }}</button></a>
+        <a href="/game" class="menu-button-wrapper"><button>{{ template_translation["PLAY"] }}</button></a>
     </div>
     <div class="footer_links">
         <div class="footer_links-container">
             <button onclick="overloadClocks();setCookie('randint', Math.floor(Math.random() * 10000), {'max-age': 31536000})">
                 <div class="footer_links-text" id="new_word" hidden>
-                    NEW
-                    WORD
+                    {{ template_translation["NEW WORD"] }}
                 </div>
                 <div class="clock" id="clock">
                     <div class="clock-point" id="clock-point"></div>

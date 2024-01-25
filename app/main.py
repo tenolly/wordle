@@ -26,7 +26,7 @@ async def index(request: Request, lang: str = Cookie(default="en")):
     context = {
         "lang": lang,
         "next_lang": available_laguages[(available_laguages.index(lang) + 1) % len(available_laguages)],
-        "play": laguages[lang]["templates"]["PLAY"]
+        "template_translation": laguages[lang]["templates"]
     }
     return templates.TemplateResponse(request=request, name="index.html", context=context)
 
@@ -39,7 +39,7 @@ async def game(request: Request, lang: str = Cookie(default="en")):
 
     context = {
         "lang": lang,
-        "play": laguages[lang]["templates"]["PLAY"]
+        "template_translation": laguages[lang]["templates"]
     }
     return templates.TemplateResponse(request=request, name="game.html", context=context)
 
